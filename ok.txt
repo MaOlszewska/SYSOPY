@@ -1,3 +1,5 @@
-Sysopy są super
-uwielbiam sysopy
-najporstrzy przedmiot na świecie
+Napisz program testujący działanie funkcji z biblioteki z zadania 1.
+Jako argumenty przekaż liczbę elementów tablicy głównej (liczbę par plików)
+oraz listę zadań do wykonania. Zadania mogą stanowić zadania zliczenia
+dla wszystkich plików  lub zadania usunięcia bloku o podanym indeksie.
+Operacje mogą być specyfikowane w linii poleceń na przykład jak poniżej

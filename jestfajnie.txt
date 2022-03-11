@@ -2,5 +2,5 @@ Zaprojektuj i przygotuj zestaw funkcji (bibliotekę) d
 o zarządzania tablicą bloków, w których to blokach pamięci z
 apisywane są rezultaty operacji zliczania lini, słów i z
 naków (poleceniem wc)
- w plikach przekazywanych jako odpowiedni
-  parametr.
+w plikach przekazywanych jako odpowiedni
+parametr.

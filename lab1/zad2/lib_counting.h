@@ -21,13 +21,13 @@ struct ArrayOfPointers* create_array(int size);
 
 struct Block* create_counting_blocks(const char *files);
 
-void remove_block(struct ArrayOfPointers* array, int index);
-
 int count_files(struct ArrayOfPointers* array, char* fiels);
 
 void remove_array(struct ArrayOfPointers* array);
 
 void remove_rows(struct Block* block);
+
+void remove_block(struct ArrayOfPointers* array, int index);
 
 int count_lines(const char *files);
 

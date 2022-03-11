@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "lib_counting.h"
+#include "../zad2/lib_counting.h"
 
 //
 // utworzenie tablicy wskaźników w której będą przechowywane wskaźniki na bloki pamięci zawierające wyniki
@@ -154,3 +154,5 @@ void show_array(struct ArrayOfPointers* array){
 // poprawić usuwanie całego array   ------ chyba ok
 // valgrind   ---------- mam
 // przesuwanie indeksów
+
+
