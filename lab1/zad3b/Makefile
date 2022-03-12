@@ -7,10 +7,12 @@ dynamic:
 
 clean:
 		make -C ../zad1 clean
-		@rm -rf *.o *.a *.so *.txt main
+
 
 clean_file:
 		@rm -rf *.txt main
+		@rm -rf *.o *.a *.so raport3b.txt main
+
 tests:
 		cp -r ../files/*.txt ../zad3b
 		make test-static
@@ -64,6 +66,9 @@ test-shared:
 		# make -C ../zad1/ shared
 		$(CC) -c ../zad2/main.c
 
+<<<<<<< HEAD:lab1/zad3b/Makefile
+
+		echo "\n---SHARED LIBRARY---\n" >> raport3b.txt
 
 		echo "\n---SHARED LIBRARY---\n" >> raport3b.txt
 
@@ -96,6 +101,40 @@ test-shared:
 test_dynamic:
 		#make dynamic
 		$(CC) -c ../zad2/main.c
+
+
+		@echo "SMALL TESTS\n\n\n" >> raport3b.txt
+
+
+		./main count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt >> raport3b.txt
+		@echo "\n------------------------\n" >> raport3b.txt
+		./main count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt  remove: 0 remove: 1 >> raport3b.txt
+		@echo "\n------------------------\n" >> raport3b.txt
+		./main count_files: small.txt remove: 0 count_files: small1.txt remove: 1 >> raport3b.txt
+
+		@echo "\n\n\nMEDIUM TESTS \n\n\n" >> raport3b.txt
+		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
+		@echo "\n------------------------\n" >> raport3b.txt
+		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt remove: 0 remove: 1 >> raport3b.txt
+		@echo "\n------------------------\n" >> raport3b.txt
+		./main count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium3.txt remove: 0 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium1.txt medium3.txt remove: 1 >> raport3b.txt
+		@echo "\n------------------------\n" >> raport3b.txt
+		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
+
+		@echo "\n\n\nLARGE TESTS \n\n\n" >> raport3b.txt
+		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt medium2.txt large3.txt >> raport3b.txt
+		@echo "\n------------------------\n" >> raport3b.txt
+		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 remove: 1 >> raport3b.txt
+		@echo "\n------------------------\n" >> raport3b.txt
+		./main count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
+		@echo "\n------------------------\n" >> raport3b.txt
+		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
+
+test_dynamic:
+		#make dynamic
+		$(CC) -c ../zad2/main.c
+
+
 		echo "\n---DYNAMIC LIBRARY---\n" >> raport3b.txt
 
 		@echo "SMALL TESTS\n\n\n" >> raport3b.txt

@@ -6,8 +6,10 @@ clean:
 	make -C ../zad1 clean
 	@rm -rf *.o raport2.txt main
 
+
 clean_files:
 	@rm -rf *.txt main
+
 
 test:
 	cp -r ../files/*.txt ../zad2

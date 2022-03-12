@@ -23,7 +23,7 @@ TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000
 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
@@ -33,10 +33,14 @@ MEDIUM TESTS
 
 
 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+<<<<<<< HEAD
 TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+=======
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+>>>>>>> dc73a33c5050a6ecdb20ab64f55016ff80dc6bcd
 
 ------------------------
 
@@ -48,7 +52,7 @@ TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000
 
 ------------------------
 
-COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
@@ -57,9 +61,9 @@ TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000
 ------------------------
 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
-TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
 
 
@@ -67,15 +71,25 @@ LARGE TESTS
 
 
 
+<<<<<<< HEAD
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+=======
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+>>>>>>> dc73a33c5050a6ecdb20ab64f55016ff80dc6bcd
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
 
 ------------------------
 
+<<<<<<< HEAD
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.020000 user 0.000000 sys  0.000000 
+=======
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+>>>>>>> dc73a33c5050a6ecdb20ab64f55016ff80dc6bcd
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
@@ -84,7 +98,7 @@ TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000
 
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.020000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
@@ -103,6 +117,111 @@ SMALL TESTS
 
 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+<<<<<<< HEAD
+TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+=======
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+>>>>>>> dc73a33c5050a6ecdb20ab64f55016ff80dc6bcd
+
+------------------------
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+MEDIUM TESTS 
+
+
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+<<<<<<< HEAD
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+=======
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+>>>>>>> dc73a33c5050a6ecdb20ab64f55016ff80dc6bcd
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+LARGE TESTS 
+
+
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.020000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+---DYNAMIC LIBRARY---
+
+SMALL TESTS
+
+
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
@@ -111,7 +230,7 @@ TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000
 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
@@ -132,22 +251,14 @@ MEDIUM TESTS
 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
-TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
-
-------------------------
-
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
-REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
-REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
 ------------------------
 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
@@ -155,7 +266,19 @@ TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000
 
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+<<<<<<< HEAD
+=======
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+>>>>>>> dc73a33c5050a6ecdb20ab64f55016ff80dc6bcd
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
 
@@ -193,7 +316,7 @@ COUNT FILES  real 0.000000 user 0.000000 sys  0.000000
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
----DYNAMIC LIBRARY---
+---STATIC LIBRARY--- 
 
 SMALL TESTS
 
@@ -206,9 +329,114 @@ TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000
 
 ------------------------
 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+MEDIUM TESTS 
+
+
+
+<<<<<<< HEAD
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+=======
+>>>>>>> dc73a33c5050a6ecdb20ab64f55016ff80dc6bcd
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+
+
+
+LARGE TESTS 
+
+
+
+<<<<<<< HEAD
+=======
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+---SHARED LIBRARY---
+
+SMALL TESTS
+
+
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+>>>>>>> dc73a33c5050a6ecdb20ab64f55016ff80dc6bcd
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
@@ -227,8 +455,110 @@ MEDIUM TESTS
 
 
 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+LARGE TESTS 
+
+
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.020000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+<<<<<<< HEAD
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+=======
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+---DYNAMIC LIBRARY---
+
+SMALL TESTS
+
+
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+MEDIUM TESTS 
+
+
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
@@ -244,7 +574,7 @@ TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000
 
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
@@ -261,31 +591,323 @@ LARGE TESTS
 
 
 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
 COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+---STATIC LIBRARY--- 
+
+SMALL TESTS
+
+
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+MEDIUM TESTS 
+
+
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
 
 ------------------------
 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
 ------------------------
 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
 
 ------------------------
 
-COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
-COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+LARGE TESTS 
+
+
+
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+---SHARED LIBRARY---
+
+SMALL TESTS
+
+
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+MEDIUM TESTS 
+
+
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+LARGE TESTS 
+
+
+
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+---DYNAMIC LIBRARY---
+
+SMALL TESTS
+
+
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+MEDIUM TESTS 
+
+
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+
+
+LARGE TESTS 
+
+
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.010000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.020000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
+TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 
+
+------------------------
+
+count_files:count_files:COUNT FILES  real 0.000000 user 0.000000 sys  0.000000 
+count_files:count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+count_files:COUNT FILES  real 0.010000 user 0.000000 sys  0.000000 
+>>>>>>> dc73a33c5050a6ecdb20ab64f55016ff80dc6bcd
 REMOVED BLOCK  real 0.000000 user 0.000000 sys  0.000000 
 TOTAL TIME: real 0.000000 user 0.000000 sys  0.000000 

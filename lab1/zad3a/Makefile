@@ -10,8 +10,10 @@ clean:
 		make -C ../zad1/ clean
 		@rm -rf *.o *.a *.so raport3a.txt main
 
+
 clean_files:
 		@rm -rf *.txt main
+
 
 tests:
 		cp -r ../files/*.txt ../zad3a
