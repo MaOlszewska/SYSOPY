@@ -6,7 +6,11 @@ clean:
 	make -C ../zad1 clean
 	@rm -rf *.o raport2.txt main
 
+clean_files:
+	@rm -rf *.txt main
+
 test:
+	cp -r ../files/*.txt ../zad2
 	make -C ../zad1/ static
 	$(CC) -c main.c
 	$(CC) main.o ../zad1/lib_counting.a -o main

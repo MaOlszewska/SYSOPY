@@ -7,8 +7,12 @@ dynamic:
 
 clean:
 		make -C ../zad1 clean
-		@rm -rf *.o *.a *.so raport3b.txt main
+		@rm -rf *.o *.a *.so *.txt main
+
+clean_file:
+		@rm -rf *.txt main
 tests:
+		cp -r ../files/*.txt ../zad3b
 		make test-static
 		make test-shared
 		make test_dynamic
@@ -60,6 +64,7 @@ test-shared:
 		# make -C ../zad1/ shared
 		$(CC) -c ../zad2/main.c
 
+
 		echo "\n---SHARED LIBRARY---\n" >> raport3b.txt
 
 		@echo "SMALL TESTS\n\n\n" >> raport3b.txt
@@ -91,8 +96,6 @@ test-shared:
 test_dynamic:
 		#make dynamic
 		$(CC) -c ../zad2/main.c
-
-
 		echo "\n---DYNAMIC LIBRARY---\n" >> raport3b.txt
 
 		@echo "SMALL TESTS\n\n\n" >> raport3b.txt
