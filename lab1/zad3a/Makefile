@@ -7,7 +7,8 @@ dynamic:
 		$(CC) -c ../zad2/main.c -o main.o -ldl -D DYNAMIC
 
 clean:
-		@rm -rf *.o *.a *.so file*.txt main
+		make -C ../zad1/ clean
+		@rm -rf *.o *.a *.so raport3a.txt main
 
 tests:
 		make test-static

@@ -45,10 +45,10 @@ void print_res(clock_t clock_start, clock_t clock_end, struct tms start_tms, str
 }
 
 int command(char* task){
-    if(strchr(task, ':') - task + 1 == 12){
+    if(strcmp(task, "count_files:") == 0){
         return 1;
     }
-    else if(strchr(task, ':') - task + 1 == 7){
+    else if(strcmp(task, "remove:") == 0){
         return 0;
     }
     else return -1;

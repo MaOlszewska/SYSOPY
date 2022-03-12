@@ -3,7 +3,8 @@ CFLAGS = -Wall -g
 DIR := ${CURDIR}
 
 clean:
-	@rm -rf *.o *.a *.so file*.txt main
+	make -C ../zad1 clean
+	@rm -rf *.o raport2.txt main
 
 test:
 	make -C ../zad1/ static

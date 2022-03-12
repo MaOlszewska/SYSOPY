@@ -13,7 +13,7 @@ lib_counting.o: lib_counting.c lib_counting.h
 		$(CC) -c lib_counting.c
 
 clean:
-		rm -f *.o
+		rm -f *.o *.a *.so
 
 clean-library:
 		rm -f *.so
