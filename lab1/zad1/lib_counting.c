@@ -18,7 +18,7 @@ struct ArrayOfPointers* create_array(int size){
     array -> blocks = calloc(size, sizeof(struct Block));   // alokuje pamięć dla wskaźników na bloki z wynikami
     array-> las_idx = -1;                                        // pole które zawiera ostatni indeks
 
-    printf("Array was made \n");
+    //printf("Array was made \n");
     return array;
 }
 
@@ -46,7 +46,6 @@ struct Block* create_counting_blocks(char files[]){
 //    FILE* temp = tmpfile();
 //    strcat(command, " > temp_file.txt");
 //    system(command);                          //zapisanie danych do pliku
-    printf("%s", command);
     FILE* temp = popen(command, "r");    // Wywołuje polecenie zliczania lini, słów i znaków i zapisuje do pliku temp
     char line[100];
     for(int i = 0; i < block->rows_number; i++){
@@ -58,7 +57,7 @@ struct Block* create_counting_blocks(char files[]){
 
     fclose(temp);
 
-    printf("blocks are made \n");
+    //printf("blocks are made \n");
     return block;
 }
 
@@ -69,7 +68,7 @@ struct Block* create_counting_blocks(char files[]){
 int count_files(struct ArrayOfPointers* array, char*fiels){
     struct Block* block_to_added = create_counting_blocks(fiels);
     array->blocks[++array->las_idx] = block_to_added;
-    printf("Last index is %d \n", array->las_idx );
+    //printf("Last index is %d \n", array->las_idx );
     return array->las_idx;
 }
 
@@ -81,7 +80,7 @@ int count_files(struct ArrayOfPointers* array, char*fiels){
 void remove_rows(struct Block* block){
     for(int i = 0; i < block->rows_number; i++){
         if(block->rows[i] != NULL){
-            printf("Removed rows %d\n", i);
+            //printf("Removed rows %d\n", i);
             free(block->rows[i]);
             block -> rows[i] = NULL;
         }
@@ -99,7 +98,7 @@ void remove_block(struct ArrayOfPointers* array, int index){
         remove_rows(array->blocks[index]);
         free(array->blocks[index]);
         array->blocks[index] = NULL;
-        printf("Removed block %d \n", index);
+        //printf("Removed block %d \n", index);
     }
 }
 
@@ -108,12 +107,12 @@ void remove_array(struct ArrayOfPointers* array){
         if(array->blocks[i] != NULL){
             remove_rows(array->blocks[i]);
             free(array->blocks[i]);
-            printf("Removed block %d \n", i);
+            //printf("Removed block %d \n", i);
         }
     }
     free(array->blocks);
     free(array);
-    printf("Removed array \n");
+    //printf("Removed array \n");
 }
 
 

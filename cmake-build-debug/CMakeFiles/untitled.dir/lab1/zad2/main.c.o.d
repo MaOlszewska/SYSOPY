@@ -50,4 +50,11 @@ CMakeFiles/untitled.dir/lab1/zad2/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/martynka/CLionProjects/Sysopy/lab1/zad2/../zad1/lib_counting.h
+ /home/martynka/CLionProjects/Sysopy/lab1/zad2/../zad1/lib_counting.h \
+ /usr/include/x86_64-linux-gnu/sys/times.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
