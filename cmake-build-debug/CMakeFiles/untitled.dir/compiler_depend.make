@@ -118,7 +118,6 @@ CMakeFiles/untitled.dir/lab1/zad2/main.c.o: ../lab1/zad2/main.c \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/strings.h \
-  ../lab1/zad1/lib_counting.h \
   /usr/include/x86_64-linux-gnu/sys/times.h \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
@@ -126,7 +125,8 @@ CMakeFiles/untitled.dir/lab1/zad2/main.c.o: ../lab1/zad2/main.c \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  ../lab1/zad1/lib_counting.h
 
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
