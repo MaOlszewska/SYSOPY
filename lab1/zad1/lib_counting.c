@@ -1,7 +1,7 @@
 
 // Created by martynka on 08.03.2022.
 //
-
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -37,7 +37,7 @@ struct Block* create_counting_blocks(char files[]){
     }
 
     struct Block* block = calloc(1, sizeof(struct Block)); // Alokuje pamięć dla bloków pamięci
-    block -> rows_number = counter + 1; // obliczam ile lini bedzie posiadać wynik
+    block -> rows_number = counter ; // obliczam ile lini bedzie posiadać wynik
     block -> rows = calloc(block->rows_number, sizeof(char *)); // alokuje pamięć,aby zapisać linie wyniku
 
 
@@ -46,6 +46,7 @@ struct Block* create_counting_blocks(char files[]){
 //    FILE* temp = tmpfile();
 //    strcat(command, " > temp_file.txt");
 //    system(command);                          //zapisanie danych do pliku
+    printf("%s", command);
     FILE* temp = popen(command, "r");    // Wywołuje polecenie zliczania lini, słów i znaków i zapisuje do pliku temp
     char line[100];
     for(int i = 0; i < block->rows_number; i++){

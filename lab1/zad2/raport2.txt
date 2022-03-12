@@ -1,8 +1,27 @@
 ~~~~~~~~~~~~~~~~~~~STATIC TEST~~~~~~~~~~~~~~~~~~~
-make[1]: Wejście do katalogu '/home/martynka/CLionProjects/Sysopy/lab1/zad2'
 
 ########### SMALL TESTS ###########
 
 5 files, 2 lines
 
-make[1]: Opuszczenie katalogu '/home/martynka/CLionProjects/Sysopy/lab1/zad2'
+Array was made 
+81wc small2.txt small3.txt blocks are made 
+Last index is 0 
+Block number 0: 
+ Row number 0 ->   2  25 184 small2.txt
+ 
+Row number 1 ->   1  25 191 small3.txt
+ 
+
+4Removed rows 0
+Removed rows 1
+Removed block 0 
+56wc small4.txt blocks are made 
+Last index is 1 
+Block number 1: 
+ Row number 0 ->   1  22 191 small4.txt
+ 
+
+Removed rows 0
+Removed block 1 
+Removed array 
