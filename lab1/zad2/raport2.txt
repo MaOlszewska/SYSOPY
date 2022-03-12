@@ -1,0 +1,8 @@
+~~~~~~~~~~~~~~~~~~~STATIC TEST~~~~~~~~~~~~~~~~~~~
+make[1]: Wejście do katalogu '/home/martynka/CLionProjects/Sysopy/lab1/zad2'
+
+########### SMALL TESTS ###########
+
+5 files, 2 lines
+
+make[1]: Opuszczenie katalogu '/home/martynka/CLionProjects/Sysopy/lab1/zad2'

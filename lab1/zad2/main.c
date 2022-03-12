@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include  "../zad2/lib_counting.h"
+#include  "../zad1/lib_counting.h"
 //#include  "../zad2/lib_counting.c"
 
 // zadania do wykonania: 1 - Zliczenie dla plików, 0 - usunięcie bloku o podanym indeksie
@@ -21,8 +21,10 @@ int main(int argc, char* argv[]) {
 
     struct ArrayOfPointers *array = NULL;
     array = create_array(argc - 1);
+    printf("%d",argc);
     for(int i = 1; i < argc; i++) { // zliczenie dla podancyh plików
         int task = command(argv[i]);
+        printf("%d", i);
 
         if (task == 1) {    //ogarnąć dla plikóœ
             char files[256] = "" ;
@@ -30,17 +32,22 @@ int main(int argc, char* argv[]) {
             while ( command(argv[i]) == -1) {
                 strcat(files, argv[i]);
                 strcat(files, " ");
-                if( i <= argc && command(argv[i + 1]) == -1 ) ++i;
+                if( i < argc - 1 && command(argv[i + 1]) == -1 ) ++i;
                 else break;
             }
             count_files(array, files);
+            show_array(array);
         }
 
         else if(task == 0){ // usuniecie bloku o zadanym indeksie
             remove_block(array, atoi(argv[++i]) );
+            printf("%d", i);
         }
         else printf("Wrong command");
+
+
     }
+    remove_array(array);
 
     return 0;
 }

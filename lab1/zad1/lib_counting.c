@@ -1,20 +1,19 @@
-//
+
 // Created by martynka on 08.03.2022.
 //
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "lib_counting.h"
+#include "../zad1/lib_counting.h"
 
 //
 // utworzenie tablicy wskaźników w której będą przechowywane wskaźniki na bloki pamięci zawierające wyniki
 //
 
-struct ArrayOfPointers *create_array(int size){
+struct ArrayOfPointers* create_array(int size){
     if(size <= 0) return NULL;
     struct ArrayOfPointers* array =calloc(1, sizeof(struct ArrayOfPointers)); //alokuje pamięćcdla tablicy wskaźników
-
     array->size = size;                                                 // tablica ma pole size czyli jej rozmiar
     array -> blocks = calloc(size, sizeof(struct Block));   // alokuje pamięć dla wskaźników na bloki z wynikami
     array-> las_idx = -1;                                        // pole które zawiera ostatni indeks
@@ -23,17 +22,6 @@ struct ArrayOfPointers *create_array(int size){
     return array;
 }
 
-//
-// obliczam ile jest plików przekazanccyh jako paramentr
-//
-int count_lines(const char files[]){
-    int counter = 1;
-    for(int i = 0; i < sizeof(files); i++){
-        if(files[i] == ' ')
-            counter ++;
-    }
-    return ++counter;
-}
 
 //
 // przeprowadzenie zliczenia lini, słów i znaków dla zadanych plików i zapisanie wyniku zliczania w pliku tymczasowym
@@ -41,9 +29,15 @@ int count_lines(const char files[]){
 // pamięci jego zawartości
 //
 
-struct Block* create_counting_blocks(const char files[]){
+struct Block* create_counting_blocks(char files[]){
+    int counter = 0;
+    for(int i = 0; i < strlen(files); i++){
+        if(files[i] == ' ')
+            counter ++;
+    }
+
     struct Block* block = calloc(1, sizeof(struct Block)); // Alokuje pamięć dla bloków pamięci
-    block -> rows_number = count_lines(files) + 1; // obliczam ile lini bedzie posiadać wynik
+    block -> rows_number = counter + 1; // obliczam ile lini bedzie posiadać wynik
     block -> rows = calloc(block->rows_number, sizeof(char *)); // alokuje pamięć,aby zapisać linie wyniku
 
 
@@ -102,6 +96,7 @@ void remove_rows(struct Block* block){
 void remove_block(struct ArrayOfPointers* array, int index){
     if(array->blocks[index] != NULL){
         remove_rows(array->blocks[index]);
+        free(array->blocks[index]);
         array->blocks[index] = NULL;
         printf("Removed block %d \n", index);
     }

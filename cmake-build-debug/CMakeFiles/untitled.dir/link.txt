@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/untitled.dir/lab1/zad2/main.c.o CMakeFiles/untitled.dir/lab1/zad1/lib_counting.c.o -o untitled 
