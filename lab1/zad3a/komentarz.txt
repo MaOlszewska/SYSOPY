@@ -1,0 +1,3 @@
+Trudno jest zaobserwować w zapisanych wynikach rozbiezności w czasach przy używaniu różnych rodzaji bibliotek.
+Różnice nie są znaczące, może to wynikać z tego ze trudno je zaobserwować, bo opreracje wykonywane są proste, więc
+są barddzo szybko wykonywane. Problemem może być również nie wystraczająca precyzja zegara,

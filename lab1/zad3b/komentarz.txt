@@ -1,0 +1,2 @@
+Nie udalo się zaobserwować znaczjących różnic pomiędzy czasami, może to wynikać z tych samych przyczyn co w zadaniau 3a.
+Jednakzę dla biblioteki statycznej dało się zauwawżyć różnice dla różnych poziomów optymalizacji.
