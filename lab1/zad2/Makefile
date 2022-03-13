@@ -4,7 +4,7 @@ DIR := ${CURDIR}
 
 clean:
 	make -C ../zad1 clean
-	@rm -rf *.o raport2.txt main
+	@rm -rf *.o  main
 
 
 clean_files:
