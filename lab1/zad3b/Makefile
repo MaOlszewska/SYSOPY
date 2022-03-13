@@ -38,29 +38,29 @@ test-static:
 
 		@echo "SMALL TESTS\n\n\n" >> raport3b.txt
 
-		./main count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt >> raport3b.txt
+		./main create: 6 count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt  remove: 0 remove: 1 >> raport3b.txt
+		./main create: 10 count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt  remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: small.txt remove: 0 count_files: small1.txt remove: 1 >> raport3b.txt
+		./main create: 5 count_files: small.txt remove: 0 count_files: small1.txt remove: 1 >> raport3b.txt
 
 		@echo "\n\n\nMEDIUM TESTS \n\n\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
+		./main create: 10 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt remove: 0 remove: 1 >> raport3b.txt
+		./main create: 4 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium3.txt remove: 0 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium1.txt medium3.txt remove: 1 >> raport3b.txt
+		./main create: 10 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium3.txt remove: 0 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium1.txt medium3.txt remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
+		./main create: 6 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
 
 		@echo "\n\n\nLARGE TESTS \n\n\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt medium2.txt large3.txt >> raport3b.txt
+		./main create: 10 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt medium2.txt large3.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 remove: 1 >> raport3b.txt
+		./main create: 5 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
+		./main create: 10 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
+		./main create: 4 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 
 test-shared:
 
@@ -72,29 +72,29 @@ test-shared:
 
 		@echo "SMALL TESTS\n\n\n" >> raport3b.txt
 
-		./main count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt >> raport3b.txt
+		./main create: 3 count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt  remove: 0 remove: 1 >> raport3b.txt
+		./main create: 10 count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt  remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: small.txt remove: 0 count_files: small1.txt remove: 1 >> raport3b.txt
+		./main create: 4 count_files: small.txt remove: 0 count_files: small1.txt remove: 1 >> raport3b.txt
 
 		@echo "\n\n\nMEDIUM TESTS \n\n\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
+		./main create: 10 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt remove: 0 remove: 1 >> raport3b.txt
+		./main create: 10 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium3.txt remove: 0 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium1.txt medium3.txt remove: 1 >> raport3b.txt
+		./main create: 5 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium3.txt remove: 0 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium1.txt medium3.txt remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
+		./main create: 10 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
 
 		@echo "\n\n\nLARGE TESTS \n\n\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt medium2.txt large3.txt >> raport3b.txt
+		./main create: 4 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt medium2.txt large3.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 remove: 1 >> raport3b.txt
+		./main create: 5 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
+		./main create: 10 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
+		./main create: 6 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 
 test_dynamic:
 
@@ -104,29 +104,29 @@ test_dynamic:
 		@echo "SMALL TESTS\n\n\n" >> raport3b.txt
 
 
-		./main count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt >> raport3b.txt
+		./main create: 10 count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt  remove: 0 remove: 1 >> raport3b.txt
+		./main create: 5 count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt  remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: small.txt remove: 0 count_files: small1.txt remove: 1 >> raport3b.txt
+		./main create: 10 count_files: small.txt remove: 0 count_files: small1.txt remove: 1 >> raport3b.txt
 
 		@echo "\n\n\nMEDIUM TESTS \n\n\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
+		./main create: 5 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt remove: 0 remove: 1 >> raport3b.txt
+		./main create: 4 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium3.txt remove: 0 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium1.txt medium3.txt remove: 1 >> raport3b.txt
+		./main create: 5 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium3.txt remove: 0 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium1.txt medium3.txt remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
+		./main create: 10 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
 
 		@echo "\n\n\nLARGE TESTS \n\n\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt medium2.txt large3.txt >> raport3b.txt
+		./main create: 10 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt medium2.txt large3.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 remove: 1 >> raport3b.txt
+		./main create: 10 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
+		./main create: 11 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
+		./main create: 6 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 
 test_dynamic:
 
@@ -137,29 +137,29 @@ test_dynamic:
 
 		@echo "SMALL TESTS\n\n\n" >> raport3b.txt
 
-		./main count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt >> raport3b.txt
+		./main create: 3 count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt  remove: 0 remove: 1 >> raport3b.txt
+		./main create: 10 count_files: small2.txt small3.txt count_files: small4.txt count_files: small1.txt small2.txt small3.txt small4.txt  remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: small.txt remove: 0 count_files: small1.txt remove: 1 >> raport3b.txt
+		./main create: 16 count_files: small.txt remove: 0 count_files: small1.txt remove: 1 >> raport3b.txt
 
 		@echo "\n\n\nMEDIUM TESTS \n\n\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
+		./main create: 10 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt remove: 0 remove: 1 >> raport3b.txt
+		./main create: 5 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium3.txt remove: 0 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium1.txt medium3.txt remove: 1 >> raport3b.txt
+		./main create: 10 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium3.txt remove: 0 count_files: medium1.txt medium2.txt medium3.txt medium1.txt medium2.txt medium1.txt medium3.txt remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
+		./main create: 4 count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt count_files: medium1.txt medium2.txt medium3.txt >> raport3b.txt
 
 		@echo "\n\n\nLARGE TESTS \n\n\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt medium2.txt large3.txt >> raport3b.txt
+		./main create: 10 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt medium2.txt large3.txt >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 remove: 1 >> raport3b.txt
+		./main create: 4 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
+		./main create: 10 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 0 count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 		@echo "\n------------------------\n" >> raport3b.txt
-		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
+		./main create: 5 count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 
 
 

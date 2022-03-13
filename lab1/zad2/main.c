@@ -9,7 +9,6 @@
 #endif
 
 #ifdef DYNAMIC
-
 #include <dlfcn.h>
 typedef struct Block
 {
@@ -51,11 +50,13 @@ int command(char* task){
     else if(strcmp(task, "remove:") == 0){
         return 0;
     }
+    else if(strcmp(task,"create:") == 0){
+        return 2;
+    }
     else return -1;
 }
 
 int main(int argc, char* argv[]) {
-
     #ifdef DYNAMIC
     void *handle = dlopen("../zad1/lib_counting.so",RTLD_LAZY);
     create_array = (struct ArrayOfPointers* (*) (int)) dlsym (handle, "create_array");
@@ -74,12 +75,19 @@ int main(int argc, char* argv[]) {
     clock_t clock_end;
 
     struct ArrayOfPointers *array = NULL;
-    array = create_array(argc - 1);
-    for(int i = 1; i < argc; i++) { // zliczenie dla podancyh plików
-        int task = command(argv[i]);
-        clock_start = times(&start_tms);
 
+    if(command(argv[1]) == 2){
+        printf("CREATE ARRAY ");
+        clock_start = times(&start_tms);
+        array = create_array(atoi(argv[2]));
+        clock_end = times(&end_tms);
+        print_res(clock_start, clock_end, start_tms, end_tms);
+    }
+
+    for(int i = 3; i < argc; i++) { // zliczenie dla podancyh plikó
+        int task = command(argv[i]);
         if (task == 1) {    //ogarnąć dla plikóœ
+            clock_start = times(&start_tms);
             char files[256] = "" ;
             ++i;
             while ( command(argv[i]) == -1) {
@@ -90,18 +98,23 @@ int main(int argc, char* argv[]) {
             }
             printf("COUNT FILES  ");
             count_files(array, files);
-            //show_array(array);
+            clock_end = times(&end_tms);
+            print_res(clock_start, clock_end, start_tms, end_tms);
+            // show_array(array);
         }
 
         else if(task == 0){ // usuniecie bloku o zadanym indeksie
+            clock_start = times(&start_tms);
             printf("REMOVED BLOCK  ");
             remove_block(array, atoi(argv[++i]) );
+            clock_end = times(&end_tms);
+            print_res(clock_start, clock_end, start_tms, end_tms);
         }
 
         else printf("Wrong command");
 
-        clock_end = times(&end_tms);
-        print_res(clock_start, clock_end, start_tms, end_tms);
+
+
     }
     clock_end = times(&end_tms);
     printf("TOTAL TIME: ");
