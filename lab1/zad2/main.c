@@ -84,9 +84,10 @@ int main(int argc, char* argv[]) {
         print_res(clock_start, clock_end, start_tms, end_tms);
     }
 
-    for(int i = 3; i < argc; i++) { // zliczenie dla podancyh plikó
+    for(int i = 3; i < argc; i++) {
         int task = command(argv[i]);
-        if (task == 1) {    //ogarnąć dla plikóœ
+
+        if (task == 1) {
             clock_start = times(&start_tms);
             char files[256] = "" ;
             ++i;
@@ -100,10 +101,9 @@ int main(int argc, char* argv[]) {
             count_files(array, files);
             clock_end = times(&end_tms);
             print_res(clock_start, clock_end, start_tms, end_tms);
-            // show_array(array);
         }
 
-        else if(task == 0){ // usuniecie bloku o zadanym indeksie
+        else if(task == 0){
             clock_start = times(&start_tms);
             printf("REMOVED BLOCK  ");
             remove_block(array, atoi(argv[++i]) );
@@ -112,10 +112,8 @@ int main(int argc, char* argv[]) {
         }
 
         else printf("Wrong command");
-
-
-
     }
+
     clock_end = times(&end_tms);
     printf("TOTAL TIME: ");
     print_res(clock_start, clock_end, start_tms, end_tms);
