@@ -8,7 +8,7 @@ dynamic:
 
 clean:
 		make -C ../zad1/ clean
-		@rm -rf *.o *.a *.so raport3a.txt main
+		@rm -rf *.o main
 
 
 clean_files:

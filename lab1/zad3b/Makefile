@@ -7,11 +7,11 @@ dynamic:
 
 clean:
 		make -C ../zad1 clean
-
+		@rm -rf *.o main
 
 clean_file:
 		@rm -rf *.txt main
-		@rm -rf *.o *.a *.so raport3b.txt main
+
 
 tests:
 		cp -r ../files/*.txt ../zad3b
@@ -30,7 +30,7 @@ test:
 		done
 
 test-static:
-		#make -C ../zad1/ static
+
 		$(CC) -c ../zad2/main.c
 		$(CC) main.o ../zad1/lib_counting.a -o main
 
@@ -63,10 +63,8 @@ test-static:
 		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 
 test-shared:
-		# make -C ../zad1/ shared
-		$(CC) -c ../zad2/main.c
 
-<<<<<<< HEAD:lab1/zad3b/Makefile
+		$(CC) -c ../zad2/main.c
 
 		echo "\n---SHARED LIBRARY---\n" >> raport3b.txt
 
@@ -99,7 +97,7 @@ test-shared:
 		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 
 test_dynamic:
-		#make dynamic
+
 		$(CC) -c ../zad2/main.c
 
 
@@ -131,7 +129,7 @@ test_dynamic:
 		./main count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt count_files: large1.txt large2.txt large3.txt large1.txt large2.txt large1.txt large2.txt large3.txt remove: 1 >> raport3b.txt
 
 test_dynamic:
-		#make dynamic
+
 		$(CC) -c ../zad2/main.c
 
 
