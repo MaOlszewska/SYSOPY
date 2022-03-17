@@ -1,0 +1,4 @@
+Funkcje systemowe odpowiadające za otwieranie i tworzenie plików to open oraz creat:
+int open(const char *pathname, int flags[, mode_t mode]);
+int creat(const char *pathname, mode_t mode);
+Lista możliwych flag dla funkcji open:

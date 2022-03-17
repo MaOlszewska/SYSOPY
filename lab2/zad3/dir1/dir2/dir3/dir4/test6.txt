@@ -1,0 +1,30 @@
+int close(int fd);
+Przykład 1
+Program kopiujący znak po znaku z wykorzystaniem funkcji niskopoziomowych
+#include <unistd.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+int main()
+{
+char c;
+int we,wy;
+we=open("we", O_RDONLY);
+wy=open("wy",O_WRONLY|O_CREAT,S_IRUSR|S_IWUSR);
+while(read(we,&c,1)==1)
+ write(wy,&c,1);
+}
+Przykład 2
+Program kopiujący blokami o rozmiarze 1024B z wykorzystaniem funkcji niskopoziomowych
+#include <unistd.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+int main()
+{
+char blok[1024];
+int we, wy;
+int liczyt;
+we=open("we", O_RDONLY);
+wy=open("wy",O_WRONLY|O_CREAT,S_IRUSR|S_IWUSR);
+while((liczyt=read(we,blok,sizeof(blok)))>0)
+ write(wy,blok,liczyt);
+}

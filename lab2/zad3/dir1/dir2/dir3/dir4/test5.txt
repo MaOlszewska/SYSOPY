@@ -1,0 +1,12 @@
+long lseek (int fd, off_t offset, int whence);
+Argumenty:
+fd – deskryptor do pliku na którym operujemy
+offset – nowa pozycja w pliku
+whence – parametr służący interpretacji drugiego parametru. Musi być to liczba równa 0, 1 lub 2
+Parametr whence funkcji lseek przyjmuje jedną z wartości:
+ SEEK_SET – początek pliku
+ SEEK_END – koniec pliku
+ SEEK_CUR – aktualna pozycja wskaźnika
+Na podstawie tej wartości wylicza nową pozycję wskaźnika po przesunięciu o offset
+Wyniki: W przypadku powodzenia funkcja zwraca nowa pozycje w pliku, w przeciwnym wypadku wartość
+mniejsza od zera.

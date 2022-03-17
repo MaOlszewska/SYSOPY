@@ -1,0 +1,8 @@
+Funkcje systemowe operujące na plikach w systemie UNIX oparte są na pojęciu deskryptora. Deskryptor to
+nieujemna zmienna typu int przypisana przez system w danym procesie do danego pliku, unikalna w obrębie
+tego procesu. Każdy proces dostaje 3 domyślne deskryptory: (stałe zdefiniowane w <unistd.h>)
+ standardowe wejście STDIN_FILENO (0)
+ standardowe wyjście STDOUT_FILENO (1)
+ standardowe wyjście diagnostyczne STDERR_FILENO (2)
+Korzystanie z funkcji systemowych do obsługi plików wymaga dołączenia bibliotek:
+<fcntl.h> <unistd.h> <sys/types.h> <sys/stat.h>

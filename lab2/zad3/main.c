@@ -4,11 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <sys/times.h>
-#include <unistd.h>
-#include <stdbool.h>
-#include <ctype.h>
-#include <fcntl.h>
 #include <dirent.h>
 #include <sys/stat.h>
 #include <time.h>
@@ -23,22 +18,13 @@ int link_counter = 0;
 int socket_counter = 0;
 int file_counter = 0;
 
-long double time_sec(clock_t time){
-    return (long double)(time) / sysconf(_SC_CLK_TCK);
-}
-
-void print_res(clock_t clock_start, clock_t clock_end, struct tms start_tms, struct tms end_tms){
-    printf("\nreal %Lf ", time_sec(clock_end - clock_start));
-    printf("user %Lf ", time_sec(end_tms.tms_utime - start_tms.tms_utime));
-    printf("sys  %Lf \n", time_sec(end_tms.tms_stime - start_tms.tms_stime));
-}
 char *path_update(char *path, char *curr){
     char * new = calloc(sizeof(char), 1000);
     sprintf(new, "%s/%s", path, curr);
     return new;
 }
 void print_inf(){
-    printf("Liczba fifo: %d\n", fifo_counter);
+    printf("\nLiczba fifo: %d\n", fifo_counter);
     printf("Liczba zwykłych plików: %d\n", file_counter);
     printf("Liczba katalogów: %d\n", dir_counter);
     printf("Liczba urządzeń znakowych: %d\n", char_dev_counter);
@@ -140,7 +126,7 @@ void return_type_FTW(int tmp){
     }
 }
 
-int display(char*name,struct stat* stats, int type){
+int display(const char*name, const struct stat* stats, int type){
     struct tm dt;
     if(type == FTW_DNR || type == FTW_D ) {
         ++dir_counter;
@@ -166,12 +152,6 @@ void search_dir_ver2(char* dir_name){
 }
 
 int main(int argc, char* argv[]) {
-
-    struct tms start_tms;
-    struct tms end_tms;
-    clock_t clock_start;
-    clock_t clock_end;
-
     char * dir_name;
 
     if(argc == 2){
@@ -184,10 +164,7 @@ int main(int argc, char* argv[]) {
     }
 
     printf("Library functions C: \n");
-    clock_start = times(&start_tms);
     search_dir_ver1(dir_name);
-    clock_end = times(&end_tms);
-    print_res(clock_start, clock_end, start_tms, end_tms);
     print_inf();
 
     fifo_counter= 0;
@@ -199,10 +176,7 @@ int main(int argc, char* argv[]) {
     socket_counter = 0;
     file_counter = 0;
 
-    printf("\nFTW ");
-    clock_start = times(&start_tms);
+    printf("\nFTW:\n");
     search_dir_ver2(dir_name);
-    clock_end = times(&end_tms);
-    print_res(clock_start, clock_end, start_tms, end_tms);
     print_inf();
 }

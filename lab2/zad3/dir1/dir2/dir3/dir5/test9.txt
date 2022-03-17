@@ -1,0 +1,54 @@
+Zapis i odczyt pliku
+size_t fread (void * ptr, size_t size, size_t count, FILE * file)
+Argumenty:
+ ptr – wskaźnik na tablicę
+ size – rozmiar elementu tablicy
+ count – liczba elementów do odczytu
+ file – plik, na którym wykonywana jest operacja
+Funkcja fread kopiuje count elementów z podanego pliku do tablicy. Kopiowanie kończy się w przypadku
+wystąpienia błędu, końca pliku lub po skopiowaniu podanej liczby elementów. Wskaźnik pliku jest
+przesuwany, tak by wskazywał pierwszy nieodczytany element.
+Wartość zwracana: liczba faktycznie wczytanych elementów.
+size_t fwrite (const void * ptr, size_t size, size_t count, FILE * file);
+Funkcja fwrite kopiuje count elementów z poddanej tablicy do pliku. Kopiowanie kończy się w przypadku
+wystąpienia błędu lub po skopiowaniu podanej liczby elementów. Wskaźnik pliku jest przesuwany, tak by
+wskazywał pierwszy element po ostatnim zapisanym.
+Wartość zwracana: Liczba faktycznie zapisanych elementów.
+Ustawianie pozycji w pliku
+int fseek ( FILE * file, long int offset, int mode);
+Funkcja fseek ustawia pozycję w pliku file na offset w zależności od wartości argumentu mode.
+ mode = 0 – offset liczony jest od początku.
+ mode = 1 – offset przesuwany od aktualnej pozycji,
+ mode=2 – przesuwany o offset od końca pliku (wskaźnik pliku jest przesuwany do pozycji będącej sumą
+rozmiaru pliku i parametru offset).
+Zwraca: Zero gdy funkcja wykonała się pomyślnie, w przypadku błędu wartość niezerowa.
+int fsetpos (FILE* file, fpos_t* pos);
+Funkcja zmienia aktualną pozycję wskaźnika do pliku file na pos.
+Zwraca: Zero gdy funkcja wykonała się pomyślnie, EOF w przypadku wystąpienia błędu
+int fgetpos (FILE* file, fpos_t* pos);
+Funkcja umieszcza w pos aktualną pozycję wskaźnika do pliku file.
+Zwraca: Zero gdy funkcja wykonała się pomyślnie, EOF w przypadku wystąpienia błędu
+Zamykanie pliku
+int fclose ( FILE * stream );
+Przykład 3
+#include <stdio.h>
+int main ()
+{
+char napis[20];
+FILE *plik=fopen("nazwa1.txt", "a+");
+if(plik)
+{
+ fread(napis,1, 15,plik);
+ printf("%s",napis);
+ printf("\n");
+ fwrite("Zdanie drugie.", 1, 14, plik);
+ rename("nazwa1.txt","nazwa2.txt");
+ fclose(plik);
+}
+return 0;
+}
+Katalogi
+Katalogi są w systemach Unix traktowane prawie tak samo jak pliki. Jedyna, ale bardzo ważna różnica to
+hierarchia, jaką tworzą katalogi. Katalogi porządkują system plików tworząc drzewo katalogów. Katalog jest
+kontenerem dla plików. Katalogami są również . i .. – są to łącza do bieżącego katalogu i jego przodka.
+Katalog / jest korzeniem.

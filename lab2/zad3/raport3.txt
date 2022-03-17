@@ -1,0 +1,161 @@
+Library functions C: 
+Ścieżka: dir1/dir2/dir3/test4.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 533 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+Ścieżka: dir1/dir2/dir3/test3.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 230 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir4/test6.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 672 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir4/test5.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 612 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir5/test7.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 321 
+Data dostępu: 17-2-2022 23:40 
+Data modyfiakacji: 17-2-2022 23:40
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir5/test9.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 2606 
+Data dostępu: 17-2-2022 23:40 
+Data modyfiakacji: 17-2-2022 23:40
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir5/test10.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 1686 
+Data dostępu: 17-2-2022 23:40 
+Data modyfiakacji: 17-2-2022 23:40
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir5/test8.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 574 
+Data dostępu: 17-2-2022 23:40 
+Data modyfiakacji: 17-2-2022 23:40
+----------------------------
+Ścieżka: dir1/test2.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 581 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+Ścieżka: dir1/test1.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 464 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+
+Liczba fifo: 0
+Liczba zwykłych plików: 10
+Liczba katalogów: 5
+Liczba urządzeń znakowych: 0
+Liczba urządzeń blokowych: 0
+Liczba linków symbolicznych: 0
+Liczba soketów: 0
+Liczba plików nieznanych: 0
+
+FTW:
+Ścieżka: dir1/dir2/dir3/test4.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 533 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+Ścieżka: dir1/dir2/dir3/test3.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 230 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir4/test6.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 672 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir4/test5.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 612 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir5/test7.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 321 
+Data dostępu: 17-2-2022 23:40 
+Data modyfiakacji: 17-2-2022 23:40
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir5/test9.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 2606 
+Data dostępu: 17-2-2022 23:40 
+Data modyfiakacji: 17-2-2022 23:40
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir5/test10.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 1686 
+Data dostępu: 17-2-2022 23:40 
+Data modyfiakacji: 17-2-2022 23:40
+----------------------------
+Ścieżka: dir1/dir2/dir3/dir5/test8.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 574 
+Data dostępu: 17-2-2022 23:40 
+Data modyfiakacji: 17-2-2022 23:40
+----------------------------
+Ścieżka: dir1/test2.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 581 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+Ścieżka: dir1/test1.txt 
+Liczba dowiązań: 1 
+Rodzaj pliku: Zwykły plik
+Rozmiar: 464 
+Data dostępu: 17-2-2022 23:39 
+Data modyfiakacji: 17-2-2022 23:39
+----------------------------
+
+Liczba fifo: 0
+Liczba zwykłych plików: 10
+Liczba katalogów: 5
+Liczba urządzeń znakowych: 0
+Liczba urządzeń blokowych: 0
+Liczba linków symbolicznych: 0
+Liczba soketów: 0
+Liczba plików nieznanych: 0

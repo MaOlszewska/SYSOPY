@@ -1,0 +1,10 @@
+Aby otworzyć plik używamy funkcji fopen:
+FILE * fopen ( const char * filename, const char * mode );
+Atrybuty z jakimi można otworzyć plik:
+r Otwiera plik do odczytu
+w Otwiera plik do zapisu (kasuje ewentualny poprzedni)
+a Otwiera plik do zapisu. Nie kasuje poprzedniego pliku i ustawia wskaźnik na końcu.
+r+ Otwiera plik do zapisu i odczytu. Plik musi istnieć.
+w+ Otwiera plik do zapisu i odczytu. Jeśli plik istniał to nadpisuje.
+a+ Otwiera plik do odczytu i dopisywania. Nie można pisać wcześniej niż na końcu.
+[rwa+]b Otwiera plik jako binarny nie tekstowy.

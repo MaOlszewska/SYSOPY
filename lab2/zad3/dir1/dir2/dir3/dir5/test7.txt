@@ -1,0 +1,4 @@
+Funkcje biblioteki standardowej wejścia-wyjścia
+Funkcje z biblioteki standardowej C mapują funkcje systemowe. Zaletą tego rozwiązania jest przenośność
+kodu, na innym systemie funkcje z C zaimplementowane będą jako inne funkcje systemowe jednak na
+poziomie języka działanie będzie jednakowe w każdym wypadku.

@@ -1,0 +1,7 @@
+Unixowy system plików jest hierarchicznym uporządkowaniem katalogów i plików.
+Plik – struktura danych zapisana na dysku i identyfikowana za pomocą nazwy.
+Ogólny schemat operacji na plikach obejmuje:
+ otwarcie pliku (przygotowujące do zapisywania lub odczytywania informacji, skojarzenia zmiennej
+plikowej z plikiem),
+ wykonanie operacji zapisu lub odczytu danych,
+ zamknięcie pliku (przerwanie skojarzenia pomiędzy zmienną plikową i plikiem).

@@ -1,0 +1,8 @@
+int read (int fd, void *buf, size_t count);
+ próbuje wczytać podana liczbę bajtów (count) z pliku o podanym deskryptorze (fd) do podanego
+bufora (buf); bieżąca pozycja w pliku przesuwa się o tyle, ile bajtów przeczytano,
+ funkcja read zwraca ilość bajtów naprawdę przeczytanych (zawracana wartość może być mniejsza od
+nbytes !)
+ gdy "bieżąca pozycja" przekroczy koniec pliku, to read zwraca 0
+int write (int fd, void *buf, size_t count);
+ zapis zawartości bufora do pliku, argumenty analogiczne do read

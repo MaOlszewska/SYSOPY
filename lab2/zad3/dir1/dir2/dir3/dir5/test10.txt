@@ -1,0 +1,30 @@
+W bibliotece dirent.h istnieją następujące definicje:
+ DIR – struktura reprezentująca strumień katalogowy
+ struct dirent – struktura, która zawiera:
+o ino_t d_ino – numer i–węzła pliku
+o char d_name[] – nazwa pliku
+DIR* opendir(const char* dirname)
+Otwiera strumień do katalogu znajdującego się pod ścieżką dirname. Po prawidłowym wykonaniu,
+opendir zwraca wskaźnik do obiektu typu DIR, inaczej zwraca NULL.
+int closedir(DIR* dirp)
+Zamyka strumień katalogowy dirp. Po prawidłowym wykonaniu, funkcja zwraca wartość 0, inaczej zwraca –1
+i zapisuje kod błędu w zmiennej errno.
+struct dirent* readdir(DIR* dirp)
+Zwraca wskaźnik do struktury reprezentującej plik w obecnej pozycji w strumieniu dirp i awansuje pozycję
+na następny plik w kolejce. Zwrócony wskaźnik do obiektu struct dirrent nie powinien być zwolniony.
+Jeśli nie ma już więcej plików w katalogu, wartość NULL jest zwrócona. Gdy wystąpi błąd, wartość NULL także
+jest zwrócona i powód jest zapisany w zmiennej errno
+void rewinddir(DIR* dirp)
+Ustawia strumień katalogowy na początek.
+void seekdir(DIR* dirp, long int loc)
+Zmienia pozycję strumienia katalogowego.
+int stat (const char *path, struct stat *buf);
+Pobranie statusu pliku
+Argumenty: path – nazwa sprawdzanego pliku
+buf – bufor na strukturę stat
+Funkcja zwraca: err – Po sukcesie zwracane jest zero. Po błędzie –1 i ustawiane jest 'errno':
+ EBADF – 'filedes' jest nieprawidłowy.
+ ENOENT – Plik nie istnieje.
+int lstat(const char *ścieżka, struct stat *statystyka);
+Identyczna jak funkcja stat(), lecz nie zwraca on statusu plików, wskazywanych przez linki, a status samego
+linku.
