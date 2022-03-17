@@ -22,7 +22,7 @@ clean_files:
 	rm -f *test.txt
 
 copy:
-	cp -r ../files/*.txt ../zad1
+	cp -r ../files/*test.txt ../zad1
 
 clean:
 	rm -f main
