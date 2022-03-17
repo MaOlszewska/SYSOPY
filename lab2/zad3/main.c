@@ -12,6 +12,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <time.h>
+#include <ftw.h>
 
 int fifo_counter= 0;
 int unknow_counter =0;
@@ -84,8 +85,7 @@ void return_type(int tmp){
     }
 }
 
-void search_dir(char* dir_name){
-
+void search_dir_ver1(char* dir_name){
     DIR* dir;
     struct dirent* dp;
     char* path;
@@ -115,7 +115,7 @@ void search_dir(char* dir_name){
 
             if(dp->d_type == DT_DIR){
                 dir_counter++;
-                search_dir(path);
+                search_dir_ver1(path);
             }
             free(path);
         }
@@ -123,6 +123,47 @@ void search_dir(char* dir_name){
     closedir(dir);
 }
 
+void return_type_FTW(int tmp){
+    switch (tmp) {
+        case FTW_DNR:
+            printf("Rodzaj pliku: Katalog");
+            dir_counter++;
+            break;
+        case FTW_F:
+            printf("Rodzaj pliku: Zwykły plik");
+            file_counter ++;
+            break;
+        case FTW_SL:
+            printf("Rodzaj pliku: Dowiązanie symboliczne");
+            link_counter ++;
+            break;
+    }
+}
+
+int display(char*name,struct stat* stats, int type){
+    struct tm dt;
+    if(type == FTW_DNR || type == FTW_D ) {
+        ++dir_counter;
+    }
+    if(type != 1){
+        printf("Ścieżka: %s \n", name);
+        printf("Liczba dowiązań: %lu \n", stats->st_nlink);
+        return_type_FTW(type);
+        printf("\nRozmiar: %ld \n",stats->st_size);
+        dt = *(gmtime(&stats->st_atime));
+        printf("Data dostępu: %d-%d-%d %d:%d \n", dt.tm_mday, dt.tm_mon, dt.tm_year + 1900,
+               dt.tm_hour, dt.tm_min);
+        dt = *(gmtime(&stats->st_mtime));
+        printf("Data modyfiakacji: %d-%d-%d %d:%d\n", dt.tm_mday, dt.tm_mon, dt.tm_year + 1900,
+               dt.tm_hour, dt.tm_min);
+        printf("----------------------------\n");
+    }
+    return 0;
+}
+
+void search_dir_ver2(char* dir_name){
+    while( ftw("dir1", display,20) == 1) printf("DUPA");
+}
 
 int main(int argc, char* argv[]) {
 
@@ -142,6 +183,26 @@ int main(int argc, char* argv[]) {
         scanf("%s", dir_name);
     }
 
-    search_dir(dir_name);
+    printf("Library functions C: \n");
+    clock_start = times(&start_tms);
+    search_dir_ver1(dir_name);
+    clock_end = times(&end_tms);
+    print_res(clock_start, clock_end, start_tms, end_tms);
+    print_inf();
+
+    fifo_counter= 0;
+    unknow_counter =0;
+    dir_counter = 0;
+    char_dev_counter = 0;
+    block_dev_counter = 0;
+    link_counter = 0;
+    socket_counter = 0;
+    file_counter = 0;
+
+    printf("\nFTW ");
+    clock_start = times(&start_tms);
+    search_dir_ver2(dir_name);
+    clock_end = times(&end_tms);
+    print_res(clock_start, clock_end, start_tms, end_tms);
     print_inf();
 }
