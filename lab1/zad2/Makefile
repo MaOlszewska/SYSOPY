@@ -1,7 +1,9 @@
-CC = gcc
-CFLAGS = -Wall -g
-DIR := ${CURDIR}
+CC = gcc -Wall
 
+
+all:
+	make test clean
+	
 clean:
 	make -C ../zad1 clean
 	@rm -rf *.o  main

@@ -1,7 +1,5 @@
 # ninja log v5
-1	24	1647092174747126894	CMakeFiles/untitled.dir/lab1/zad2/lib_counting.c.o	11afc7b4ec4d06f
-0	30	1647095453539834860	build.ninja	9b63ef6ccd6c0100
-0	126	1646907829525323961	CMakeFiles/untitled.dir/main.c.o	6bf4e74421c99167
-0	73	1647091147513192660	CMakeFiles/untitled.dir/lab1/zad1/lib_counting.c.o	2fe627c6165164f6
-55	93	1647092330808015406	untitled	66550a4d427a383b
-0	55	1647092330768015097	CMakeFiles/untitled.dir/lab1/zad2/main.c.o	903a1e219eb60703
+1	32	1647529797956797855	build.ninja	6c2ba97301658774
+0	125	1647529796976792315	CMakeFiles/untitled.dir/lab1/zad1/lib_counting.c.o	2fe627c6165164f6
+125	183	1647529797036792655	untitled	548dfe241ef16d8f
+0	125	1647529796976792315	CMakeFiles/untitled.dir/lab1/zad2/main.c.o	903a1e219eb60703

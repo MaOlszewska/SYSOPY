@@ -1,6 +1,10 @@
 CC = gcc -Wall -std=c11 -ggdb
 DIR := ${CURDIR}
 
+
+all:
+		make test clean 		
+		
 dynamic:
 		make -C ../zad1/ shared
 		$(CC) -c ../zad2/main.c -o main.o -ldl -D DYNAMIC
