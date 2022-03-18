@@ -35,40 +35,14 @@ void print_inf(){
 }
 
 void return_type(int tmp){
-    switch (tmp) {
-        case 1:
-            printf("Rodzaj pliku:FIFO");
-            fifo_counter ++;
-            break;
-        case 0:
-            printf("Rodzaj pliku: Nieznany");
-            unknow_counter ++;
-            break;
-        case 2:
-            printf("Rodzaj pliku: Urządzenie znakowe");
-            char_dev_counter++;
-            break;
-        case 4:
-            printf("Rodzaj pliku: Katalog");
-            dir_counter++;
-            break;
-        case 6:
-            printf("Rodzaj pliku: Urządzenie blokowe");
-            block_dev_counter++;
-            break;
-        case 8:
-            printf("Rodzaj pliku: Zwykły plik");
-            file_counter ++;
-            break;
-        case 10:
-            printf("Rodzaj pliku: Dowiązanie symboliczne");
-            link_counter ++;
-            break;
-        case 12:
-            printf("Rodzaj pliku: Soket");
-            socket_counter++;
-            break;
-    }
+    if (tmp == 4) {printf("Rodzaj pliku: Katalog"); fifo_counter++;}
+    else if (tmp == 8) {printf("Rodzaj pliku: Zwykły plik"); file_counter++;}
+    else if (tmp == 10) {printf("Rodzaj pliku: Dowiązanie symboliczne");link_counter++;}
+    else if (tmp == 2) {printf("Rodzaj pliku: Urządzenie znakowe");char_dev_counter++;}
+    else if (tmp == 6) {printf("Rodzaj pliku: Urządzenie blokowe");block_dev_counter++;}
+    else if (tmp == 1) {printf("Rodzaj pliku:FIFO"); fifo_counter++;}
+    else if (tmp == 12) {printf("Rodzaj pliku: Soket"); socket_counter++;}
+    else {printf("Rodzaj pliku: Nieznany"); unknow_counter++;}
 }
 
 void search_dir_ver1(char* dir_name){
@@ -98,7 +72,6 @@ void search_dir_ver1(char* dir_name){
                     printf("----------------------------\n");
                 }
             }
-
             if(dp->d_type == DT_DIR){
                 dir_counter++;
                 search_dir_ver1(path);
@@ -109,54 +82,43 @@ void search_dir_ver1(char* dir_name){
     closedir(dir);
 }
 
-void return_type_FTW(int tmp){
-    switch (tmp) {
-        case FTW_DNR:
-            printf("Rodzaj pliku: Katalog");
-            dir_counter++;
-            break;
-        case FTW_F:
-            printf("Rodzaj pliku: Zwykły plik");
-            file_counter ++;
-            break;
-        case FTW_SL:
-            printf("Rodzaj pliku: Dowiązanie symboliczne");
-            link_counter ++;
-            break;
-    }
+void return_type_FTW(const struct stat* stats){
+    uint mode = stats->st_mode;
+    if (S_ISDIR(mode)) {printf("Rodzaj pliku: Katalog"); fifo_counter++;}
+    else if (S_ISREG(mode)) {printf("Rodzaj pliku: Zwykły plik"); file_counter++;}
+    else if (S_ISLNK(mode)) {printf("Rodzaj pliku: Dowiązanie symboliczne");link_counter++;}
+    else if (S_ISCHR(mode)) {printf("Rodzaj pliku: Urządzenie znakowe");char_dev_counter++;}
+    else if (S_ISBLK(mode)) {printf("Rodzaj pliku: Urządzenie blokowe");block_dev_counter++;}
+    else if (S_ISFIFO(mode)) {printf("Rodzaj pliku:FIFO"); fifo_counter++;}
+    else if (S_ISSOCK(mode)) {printf("Rodzaj pliku: Soket"); socket_counter++;}
+    else {printf("Rodzaj pliku: Nieznany"); unknow_counter++;}
 }
 
 int display(const char*name, const struct stat* stats, int type){
     struct tm dt;
-    if(type == FTW_DNR || type == FTW_D ) {
-        ++dir_counter;
-    }
+    if(type == FTW_DNR || type == FTW_D ) {++dir_counter;}
     if(type != 1){
         printf("Ścieżka: %s \n", name);
         printf("Liczba dowiązań: %lu \n", stats->st_nlink);
-        return_type_FTW(type);
+        return_type_FTW(stats);
         printf("\nRozmiar: %ld \n",stats->st_size);
         dt = *(gmtime(&stats->st_atime));
-        printf("Data dostępu: %d-%d-%d %d:%d \n", dt.tm_mday, dt.tm_mon, dt.tm_year + 1900,
-               dt.tm_hour, dt.tm_min);
+        printf("Data dostępu: %d-%d-%d %d:%d \n", dt.tm_mday, dt.tm_mon, dt.tm_year + 1900,dt.tm_hour, dt.tm_min);
         dt = *(gmtime(&stats->st_mtime));
-        printf("Data modyfiakacji: %d-%d-%d %d:%d\n", dt.tm_mday, dt.tm_mon, dt.tm_year + 1900,
-               dt.tm_hour, dt.tm_min);
+        printf("Data modyfiakacji: %d-%d-%d %d:%d\n", dt.tm_mday, dt.tm_mon, dt.tm_year + 1900,dt.tm_hour, dt.tm_min);
         printf("----------------------------\n");
     }
     return 0;
 }
 
 void search_dir_ver2(char* dir_name){
-    while( ftw("dir1", display,20) == 1) printf("DUPA");
+    while( ftw(dir_name, display,20) == 1);
 }
 
 int main(int argc, char* argv[]) {
     char * dir_name;
 
-    if(argc == 2){
-        dir_name = argv[1];
-    }
+    if(argc == 2){dir_name = argv[1];}
     else{
         dir_name = calloc(256,sizeof(char));
         printf("Zapomniałeś czegoś!");
