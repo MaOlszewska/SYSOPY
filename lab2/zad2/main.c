@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
     if(argc != 3){
         file = calloc(256,sizeof(char));
         character = calloc(256, sizeof(char));
-        printf("Zapomniałeś o czymś! \n");
+        printf("Zapomniałeś o czymś! Podaj znak i nazwę pliku \n");
         scanf("%s", character);
         scanf("%s", file);
     }

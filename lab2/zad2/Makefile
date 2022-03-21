@@ -1,6 +1,6 @@
 CC = gcc -Wall -g
 
-all: test clean
+all: copy test clean
 
 test:
 	$(CC) main.c -o main

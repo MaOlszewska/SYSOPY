@@ -93,7 +93,7 @@ int main(int argc, char* argv[]) {
     if(argc != 3){
         file1 = calloc(256,sizeof(char));
         file2 = calloc(256, sizeof(char));
-        printf("Zapomniałeś o czymś! Podaj nazwy dwóch plików");
+        printf("Zapomniałeś o czymś! Podaj nazwy dwóch plików\n");
         scanf("%s", file1);
         scanf("%s", file2);
     }

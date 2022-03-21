@@ -121,7 +121,7 @@ int main(int argc, char* argv[]) {
     if(argc == 2){dir_name = argv[1];}
     else{
         dir_name = calloc(256,sizeof(char));
-        printf("Zapomniałeś czegoś!");
+        printf("Zapomniałeś czegoś! Podaj nazwe katalogu");
         scanf("%s", dir_name);
     }
 
