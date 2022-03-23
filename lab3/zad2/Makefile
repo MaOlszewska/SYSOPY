@@ -31,7 +31,5 @@ test:
 	@echo "--------10000 procesów, szerokosć 0.0001--------" >> raport2.txt
 	./main 0.0001f 10000 >> raport2.txt
 
-
-
 clean:
 	rm -f main w*.txt

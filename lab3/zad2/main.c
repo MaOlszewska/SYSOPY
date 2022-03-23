@@ -29,14 +29,10 @@ float calculate_integral(float width, int n) {
         pid = fork();
         wait(NULL);
         if (pid == 0) {  // 0- preces potomy, printujemy tylko dla procesów potomnych
-            int cnt = 1;
             float tmp = 0.0;
-            while(cnt <= count){
-                tmp += f(0 + ((i*count)+(cnt)) * width);
-                cnt++;
-            }
+            for(int j = 1; j <=count; j++) {tmp += f(0 + ((i * count) + j ) * width);}
             FILE *fp;
-            char file[8];
+            char file[10];
             char number[10];
             sprintf(number, "%d", i + 1);
             strcat(file,"w");

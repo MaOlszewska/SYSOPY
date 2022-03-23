@@ -23,6 +23,7 @@ char *path_update(char *path, char *curr){
     sprintf(new, "%s/%s", path, curr);
     return new;
 }
+
 void print_inf(){
     printf("\nLiczba fifo: %d\n", fifo_counter);
     printf("Liczba zwykłych plików: %d\n", file_counter);
