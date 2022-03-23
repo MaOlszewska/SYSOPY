@@ -1,44 +1,48 @@
 --------50 procesów, szerokosć 0.02--------
-real 0.030000 user 0.000000 sys  0.000000
+real 0.020000 user 0.000000 sys  0.000000
 Wartość obliczonej całki wynosi: 3.121526
 
 --------10 procesów, szerokość 0.02---------
-real 0.030000 user 0.000000 sys  0.000000
+real 0.000000 user 0.000000 sys  0.000000
 Wartość obliczonej całki wynosi: 3.121526
 
 --------5 procesów, szerokosć 0.1--------
-real 0.000000 user 0.000000 sys  0.000000
+real 0.010000 user 0.000000 sys  0.000000
 Wartość obliczonej całki wynosi: 3.039926
 
 --------10 procesów, szerokość 0.1---------
-real 0.010000 user 0.000000 sys  0.000000
+real 0.000000 user 0.000000 sys  0.000000
 Wartość obliczonej całki wynosi: 3.039926
 
 --------5 procesów, szerokosć 0.01--------
-real 0.010000 user 0.000000 sys  0.000000
+real 0.000000 user 0.000000 sys  0.000000
 Wartość obliczonej całki wynosi: 3.131576
 
 --------10 procesów, szerokość 0.01---------
-real 0.020000 user 0.000000 sys  0.000000
+real 0.010000 user 0.000000 sys  0.000000
 Wartość obliczonej całki wynosi: 3.131576
 
 --------50 procesów, szerokosć 0.01--------
-real 0.020000 user 0.000000 sys  0.000000
+real 0.030000 user 0.000000 sys  0.000000
 Wartość obliczonej całki wynosi: 3.131576
 
 --------100 procesów, szerokość 0.01---------
-real 0.050000 user 0.000000 sys  0.010000
+real 0.050000 user 0.000000 sys  0.000000
 Wartość obliczonej całki wynosi: 3.131576
 
 --------100 procesów, szerokość 0.0001---------
-real 0.060000 user 0.000000 sys  0.010000
+real 0.050000 user 0.000000 sys  0.000000
 Wartość obliczonej całki wynosi: 3.141493
 
---------1000 procesów, szerokość 0.001---------
-real 0.080000 user 0.000000 sys  0.010000
+--------100 procesów, szerokość 0.001---------
+real 0.060000 user 0.000000 sys  0.010000
 Wartość obliczonej całki wynosi: 2.930366
 
---------1000 procesów, szerokosć 0.01--------
-real 0.050000 user 0.000000 sys  0.010000
+--------100 procesów, szerokosć 0.01--------
+real 0.050000 user 0.000000 sys  0.000000
 Wartość obliczonej całki wynosi: 3.131576
+
+--------10000 procesów, szerokosć 0.0001--------
+real 4.500000 user 0.080000 sys  1.010000
+Wartość obliczonej całki wynosi: 3.141494
 

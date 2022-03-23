@@ -24,10 +24,14 @@ test:
 	./main 0.01f 100 >> raport2.txt
 	@echo "--------100 procesów, szerokość 0.0001---------" >> raport2.txt
 	./main 0.0001f 100 >> raport2.txt
-	@echo "--------1000 procesów, szerokość 0.001---------" >> raport2.txt
+	@echo "--------100 procesów, szerokość 0.001---------" >> raport2.txt
 	./main 0.001f 100 >> raport2.txt
-	@echo "--------1000 procesów, szerokosć 0.01--------" >> raport2.txt
+	@echo "--------100 procesów, szerokosć 0.01--------" >> raport2.txt
 	./main 0.01f 100 >> raport2.txt
+	@echo "--------10000 procesów, szerokosć 0.0001--------" >> raport2.txt
+	./main 0.0001f 10000 >> raport2.txt
+
+
 
 clean:
 	rm -f main w*.txt
