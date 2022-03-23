@@ -1,0 +1,64 @@
+--------5 procesów--------
+
+Jestem z procesu: 1
+Moim rodzicem jest: 84243
+Moim dzieckiem jest: 84244
+
+Jestem z procesu: 2
+Moim rodzicem jest: 84243
+Moim dzieckiem jest: 84245
+
+Jestem z procesu: 3
+Moim rodzicem jest: 84243
+Moim dzieckiem jest: 84246
+
+Jestem z procesu: 4
+Moim rodzicem jest: 84243
+Moim dzieckiem jest: 84247
+
+Jestem z procesu: 5
+Moim rodzicem jest: 84243
+Moim dzieckiem jest: 84248
+
+--------10 procesów--------- 
+
+Jestem z procesu: 1
+Moim rodzicem jest: 84251
+Moim dzieckiem jest: 84252
+
+Jestem z procesu: 2
+Moim rodzicem jest: 84251
+Moim dzieckiem jest: 84253
+
+Jestem z procesu: 3
+Moim rodzicem jest: 84251
+Moim dzieckiem jest: 84254
+
+Jestem z procesu: 4
+Moim rodzicem jest: 84251
+Moim dzieckiem jest: 84255
+
+Jestem z procesu: 5
+Moim rodzicem jest: 84251
+Moim dzieckiem jest: 84256
+
+Jestem z procesu: 6
+Moim rodzicem jest: 84251
+Moim dzieckiem jest: 84257
+
+Jestem z procesu: 7
+Moim rodzicem jest: 84251
+Moim dzieckiem jest: 84258
+
+Jestem z procesu: 8
+Moim rodzicem jest: 84251
+Moim dzieckiem jest: 84259
+
+Jestem z procesu: 9
+Moim rodzicem jest: 84251
+Moim dzieckiem jest: 84260
+
+Jestem z procesu: 10
+Moim rodzicem jest: 84251
+Moim dzieckiem jest: 84261
+
