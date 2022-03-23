@@ -16,7 +16,7 @@ long double time_sec(clock_t time){
 void print_res(clock_t clock_start, clock_t clock_end, struct tms start_tms, struct tms end_tms){
     printf("real %Lf ", time_sec(clock_end - clock_start));
     printf("user %Lf ", time_sec(end_tms.tms_utime - start_tms.tms_utime));
-    printf("sys  %Lf \n", time_sec(end_tms.tms_stime - start_tms.tms_stime));
+    printf("sys  %Lf\n", time_sec(end_tms.tms_stime - start_tms.tms_stime));
 }
 
 float f(float x){ return 4/(x*x+1); }
@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
     clock_end = times(&end_tms);
     print_res(clock_start, clock_end, start_tms, end_tms);
 
-    printf("Wartość obliczonej całki wynosi: %f", result);
+    printf("Wartość obliczonej całki wynosi: %f\n\n", result);
 
     return 0;
 }
