@@ -27,7 +27,6 @@ float calculate_integral(float width, int n) {
     int count = intervals / n;
     for (int i = 0; i < n; i++) {
         pid = fork();
-        wait(NULL);
         if (pid == 0) {  // 0- preces potomy, printujemy tylko dla procesów potomnych
             float tmp = 0.0;
             for(int j = 1; j <=count; j++) {tmp += f(0 + ((i * count) + j ) * width);}
@@ -44,6 +43,7 @@ float calculate_integral(float width, int n) {
             exit(0);
         }
     }
+    wait(NULL);
 
     float value = 0.0;
     for(int i = 1; i <= n; i++) {

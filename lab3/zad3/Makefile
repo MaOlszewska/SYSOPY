@@ -12,4 +12,4 @@ test:
 	./main dir1 ok 6
 
 clean:
-	rm -f main
+	rm -f main w*.txt
