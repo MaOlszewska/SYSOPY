@@ -1,0 +1,27 @@
+---SYGNAŁ SIGINT---
+Nr: 2
+Status: 0
+PID: 33295
+---SYGNAŁ SIGCHLD--- 
+Nr: 17
+Status: 0
+PID: 33296
+---SYGNAŁ SIGTSTP--- 
+Nr: 20
+Status: 0
+PID: 33295
+
+----------------
+
+---SYGNAŁ SIGCHLD FLAGA SA_NOCLDSTOP---
+Wiadomość nie powinna zosatć wysłana
+Nie została wysłana 
+
+----------------
+
+---FLAGA RESETHAND--- 
+Nr: 17
+PID: 33303
+Teraz nie powinno się nic pojwić
+Nic sie nie pojawiło 
+
