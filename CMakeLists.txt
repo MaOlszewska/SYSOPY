@@ -4,4 +4,4 @@ project(untitled C)
 set(CMAKE_C_STANDARD 99)
 set(SOURCE_FILES main.cpp)
 
-add_executable(untitled lab4/zad1/fork.c)
+add_executable(untitled lab4/zad1/exec.c )

@@ -1,19 +1,10 @@
+-------------------------FORK TEST-------------------- 
+
 ARGUMNET IGNORE 
 Przed wygenerowaniem rodzica 
 Po wygenerowaniu rodzica 
 Przed wygenerowaniem dziecka
-Po wygenerowaniu dziecka
-
-----------------
-
-ARGUMENT MASK
-Ustawienie maski powiodło się 
-Czy sygnał rodzica jest widoczny dla niego? 
-TAK 
-Czy sygnał dziecka jest widoczny w dziecku
-TAK 
-Czy sygnał rodzica jest widoczny w dziecku? 
-TAK 
+Po wygenerowaniu dziecka 
 
 ----------------
 
@@ -23,7 +14,19 @@ Otrzymałem sygnał 10
 Po wygenerowaniu rodzica 
 Przed wygenerowaniem dziecka
 Otrzymałem sygnał 10 
-Po wygenerowaniu dziecka
+Po wygenerowaniu dziecka 
+
+
+----------------
+
+ARGUMENT MASK
+Ustawienie maski powiodło się 
+Czy sygnał rodzica jest widoczny dla niego? 
+TAK 
+Czy sygnał dziecka jest widoczny w dziecku?
+TAK 
+Czy sygnał rodzica jest widoczny w dziecku? 
+TAK 
 
 ----------------
 
@@ -32,5 +35,41 @@ Ustawienie maski powiodło się
 Czy sygnał rodzica jest widoczny dla niego? 
 TAK 
 Czy sygnał rodzica jest widoczny w dziecku? 
-NIE
+NIE 
 
+
+ -------------------------EXEC TEST-------------------- 
+
+ARGUMNET IGNORE
+Przed wygenerowaniem rodzica
+Po wygenerowaniu rodzica
+Wywołanie funckji execl
+Przed wygenerowaniem dziecka
+Po wygenerowaniu dziecka 
+
+----------------
+
+ARGUMENT MASK
+Ustawienie maski powiodło się
+Czy sygnał rodzica jest widoczny dla niego?
+TAK
+Wywołanie funckji execl
+Czy sygnał dziecka jest widoczny w dziecku?
+TAK 
+Czy sygnał rodzica jest widoczny w dziecku? 
+TAK 
+
+----------------
+
+ARGUMENT PENDING
+Ustawienie maski powiodło się
+Czy sygnał rodzica jest widoczny dla niego?
+TAK
+Wywołanie funckji execl
+Czy sygnał rodzica jest widoczny w dziecku?
+TAK
+
+----------------------WNIOSKI-----------------------------------------
+Jak można zauważyć w obu przypadkach ustawienia sygnałów są dziedziczone.
+W przypadku fork sygnał oczekujący w przodku nie jest widoczny w potomku.
+W exec ten sygnał jest widoczny.
