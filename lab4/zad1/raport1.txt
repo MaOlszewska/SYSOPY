@@ -1,0 +1,36 @@
+ARGUMNET IGNORE 
+Przed wygenerowaniem rodzica 
+Po wygenerowaniu rodzica 
+Przed wygenerowaniem dziecka
+Po wygenerowaniu dziecka
+
+----------------
+
+ARGUMENT MASK
+Ustawienie maski powiodło się 
+Czy sygnał rodzica jest widoczny dla niego? 
+TAK 
+Czy sygnał dziecka jest widoczny w dziecku
+TAK 
+Czy sygnał rodzica jest widoczny w dziecku? 
+TAK 
+
+----------------
+
+ARGUMENT HANDLER 
+Przed wygenerowaniem rodzica 
+Otrzymałem sygnał 10 
+Po wygenerowaniu rodzica 
+Przed wygenerowaniem dziecka
+Otrzymałem sygnał 10 
+Po wygenerowaniu dziecka
+
+----------------
+
+ARGUMENT PENDING
+Ustawienie maski powiodło się 
+Czy sygnał rodzica jest widoczny dla niego? 
+TAK 
+Czy sygnał rodzica jest widoczny w dziecku? 
+NIE
+
