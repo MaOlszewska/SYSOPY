@@ -1,0 +1,34 @@
+---------------------KILL-----------------------------
+
+Jestem catcher, a tu mój numer PID: 67147
+Czekam na sygnały......
+Tu Sender.Teraz wyśle 1000 sygnałów SIGUSR1 do catchera
+Tu znowu Sender. Właśnie skończyłem, jeszcze tylko wyśle SIGUSR2
+Tu znowu catcher, odebrałem 567 sygnałów, teraz wyśle je spowrotem
+Jeszce wyśle SIGUSR2
+Czas ze sobą skończyć...
+Tu znowu Sender, Otrzymałem właśnie sygnał SUGUSR2
+Otrzymałem 259 sygnałów, a powinienem otrzymać 1000Czas ze sobą skończyć...
+
+--------------------SIGRT-----------------------------
+
+Jestem catcher, a tu mój numer PID: 67147
+Czekam na sygnały......
+Tu Sender.Teraz wyśle 1000 sygnałów SIGUSR1 do catchera
+Tu znowu Sender. Właśnie skończyłem, jeszcze tylko wyśle SIGUSR2
+Tu znowu catcher, odebrałem 1000 sygnałów, teraz wyśle je spowrotem
+Jeszce wyśle SIGUSR2
+Czas ze sobą skończyć...
+Tu znowu Sender, Otrzymałem właśnie sygnał SUGUSR2
+Otrzymałem 1000 sygnałów, a powinienem otrzymać 1000
+Czas ze sobą skończyć...
+
+------------------SIGQUEUE---------------------------
+
+Jestem catcher, a tu mój numer PID: 67420
+Czekam na sygnały......
+Tu Sender.Teraz wyśle 1000 sygnałów SIGUSR1 do catchera
+Tu znowu Sender. Właśnie skończyłem, jeszcze tylko wyśle SIGUSR2
+Tu znowu catcher, odebrałem 382 sygnałów, teraz wyśle je spowrotem
+Jeszce wyśle SIGUSR2
+Czas ze sobą skończyć...
