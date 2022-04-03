@@ -3,6 +3,10 @@
 #include <string.h>
 #include <signal.h>
 
+mode_t mode;
+char* mode_name;
+enum mode_t {IGNORE, HANDLER, MASK, PENDING};
+
 void ifBlocked(){
     sigset_t blocked;
     sigpending(&blocked);  // sprawdza oczekujace sygnały
@@ -14,21 +18,34 @@ void ifBlocked(){
 
 int main(int argc, char* argv[]) {
 
-    if (strcmp(argv[1], "ignore") == 0) {
-        printf("Przed wygenerowaniem dziecka\n");
-        raise(SIGUSR1);  // potomek generuje sygnał dla samego siebie
-        printf("Po wygenerowaniu dziecka \n");
-    }
+    mode_name = argv[1];
 
-    else if (strcmp(argv[1], "mask") == 0 || strcmp(argv[1], "pending") == 0  ) {
-        if(strcmp(argv[1], "mask") == 0) {
+    if(strcmp(mode_name, "ignore") == 0){mode = IGNORE;}
+    else if(strcmp(mode_name, "mask") == 0){mode = MASK;}
+    else if(strcmp(mode_name, "pending") == 0){mode = PENDING;}
+    else {mode = HANDLER;}
+
+    switch (mode) {
+        case IGNORE: {
+            printf("Przed wygenerowaniem dziecka\n");
+            raise(SIGUSR1);  // potomek generuje sygnał dla samego siebie
+            printf("Po wygenerowaniu dziecka \n");
+            break;
+        }
+        case MASK: {
+
             printf("Czy sygnał dziecka jest widoczny w dziecku?\n");
             raise(SIGUSR1); // potomek wysyła sygnał do samego siebie
             ifBlocked();
+            printf("Czy sygnał rodzica jest widoczny w dziecku? \n"); // czy sygnał w przodku jest widoczny w potomku
+            ifBlocked();
+            break;
         }
-        printf("Czy sygnał rodzica jest widoczny w dziecku? \n"); // czy sygnał w przodku jest widoczny w potomku
-        ifBlocked();
+        case PENDING:{
+            printf("Czy sygnał rodzica jest widoczny w dziecku? \n"); // czy sygnał w przodku jest widoczny w potomku
+            ifBlocked();
+            break;
+        }
     }
-
     return 0;
 }
