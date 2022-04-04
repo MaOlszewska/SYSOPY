@@ -12,7 +12,7 @@ void count_sig(){
     count_signal += 1;
 }
 
-void send_back(int sig, siginfo_t *info, void *ucontext){
+void send_back(int sig, siginfo_t *info, void *ucontext){ // zmienne od sa_siginfo
     pid_t pid_sender = info -> si_pid;
 
     printf("Tu znowu catcher, odebrałem %d sygnałów, teraz wyśle je spowrotem \n", count_signal);
@@ -23,7 +23,7 @@ void send_back(int sig, siginfo_t *info, void *ucontext){
                 break;
             case SIGQUEUE: {
                 union sigval value;
-               // value.sival_int += 1;
+                value.sival_int += 1;
                 sigqueue(pid_sender, SIGUSR1, value);
                 break;
             }
@@ -40,7 +40,7 @@ void send_back(int sig, siginfo_t *info, void *ucontext){
             break;
         case SIGQUEUE: {
             union sigval value;
-            //value.sival_int += 1;
+            value.sival_int += 1;
             sigqueue(pid_sender, SIGUSR2, value);
             break;
         }
@@ -68,7 +68,7 @@ int main(int argc, char* argv[]){
     struct sigaction action1;
     sigemptyset(&action1.sa_mask); // inicjalizuje zestaw sygnałów przekazywany przez set, mają być dodane do maski
     action1.sa_sigaction = count_sig;  // zliczam ilosć sygnałów, które dotarły
-    if(mode == SIGRT){
+    if(mode == SIGRT){  // zamieniam na sygnał czasu rzeczywistego
         sigaction(SIGRTMIN, &action1, NULL);
     }
     else{
@@ -77,8 +77,8 @@ int main(int argc, char* argv[]){
 
     struct sigaction action2;
     sigemptyset(&action2.sa_mask); // inicjalizuje zestaw sygnałów przekazywany przez set, mają być dodane do maski
-    action2.sa_flags = SA_SIGINFO;
-    action2.sa_sigaction = send_back;
+    action2.sa_flags = SA_SIGINFO; // możlwiość wyświetlenia informacji o sygnale
+    action2.sa_sigaction = send_back;  // co program ma wykonwać po otrzymaniu tego sygnału
     if(mode == SIGRT){
         sigaction(SIGRTMAX, &action2, NULL);
     }

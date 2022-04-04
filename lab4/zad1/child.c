@@ -9,7 +9,7 @@ enum mode_t {IGNORE, HANDLER, MASK, PENDING};
 
 void ifBlocked(){
     sigset_t blocked;
-    sigpending(&blocked);  // sprawdza oczekujace sygnały
+    sigpending(&blocked);  // sprawdza oczekujace sygnały na odblowanie
     if(sigismember(&blocked, SIGUSR1) == 1){ // czy sygnał SIGUSR1 należy do blocked jeśli tak to zwraca 1
         printf("TAK \n");}
     else{printf("NIE \n");}

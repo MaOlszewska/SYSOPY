@@ -10,6 +10,8 @@ enum mode_t {KILL, SIGQUEUE, SIGRT};
 
 int counter_signal = 0;
 int number_signals;
+
+
 void show_number(int sig, siginfo_t *info, void *ucontext){
     counter_signal += 1;
     if(mode == SIGQUEUE){
@@ -36,15 +38,15 @@ int main(int argc, char* argv[]){
     else {mode = SIGRT;}
 
     struct sigaction action1;
-    sigemptyset(&action1.sa_mask);
+    sigemptyset(&action1.sa_mask); // inicjalizuje zestaw sygnałów przekazywany przez set, mają być dodane do maski
     action1.sa_flags = SA_SIGINFO;
-    action1.sa_sigaction = show_number;
-    if(mode == SIGRT){sigaction(SIGRTMIN, &action1, NULL);}
+    action1.sa_sigaction = show_number; // co program ma zrobić po otzrymaniu sygnału
+    if(mode == SIGRT){sigaction(SIGRTMIN, &action1, NULL);} // jeśli jest SIGRT to zmieniam na sygnał czasu rzeczywistego
     else{sigaction(SIGUSR1, &action1, NULL);}
 
     struct sigaction action2;
     sigemptyset(&action2.sa_mask); // inicjalizuje zestaw sygnałów przekazywany przez set, mają być dodane do maski
-    action2.sa_flags = SA_SIGINFO;
+    action2.sa_flags = SA_SIGINFO;  // możlwiość wyswietlniea informacji o sygnale
     action2.sa_sigaction = show_info;  // zliczam ilosć sygnałów, które dotarły
     if(mode == SIGRT){sigaction(SIGRTMAX, &action2, NULL);}
     else{sigaction(SIGUSR1, &action2, NULL);}
@@ -54,16 +56,16 @@ int main(int argc, char* argv[]){
        // printf("%d sygnał....\n", i);
         switch (mode) {
             case KILL:
-                kill(pid_catcher, SIGUSR1);
+                kill(pid_catcher, SIGUSR1);  // wysyłam sygnał do katchera
                 break;
-            case SIGQUEUE: {
+            case SIGQUEUE: {  //sygnał do catchera ale z dodatkową wartoscią
                 union sigval value;
-                //value.sival_int += 1;
+                value.sival_int += 1;
                 sigqueue(pid_catcher, SIGUSR1, value);
                 break;
             }
             case SIGRT:
-                kill(pid_catcher, SIGRTMIN);
+                kill(pid_catcher, SIGRTMIN); // sygnałc czasu rzeczywistego
                 break;
         }
     }
@@ -74,14 +76,14 @@ int main(int argc, char* argv[]){
         case KILL:
             kill(pid_catcher, SIGUSR2);
             break;
-        case SIGQUEUE: {
+        case SIGQUEUE: {  // to samo co kill ale jeszcze z dodatkową wartościa
             union sigval value;
-            //value.sival_int += 1;
+            value.sival_int += 1;
             sigqueue(pid_catcher, SIGUSR2, value);
             break;
         }
         case SIGRT:
-            kill(pid_catcher, SIGRTMAX);
+            kill(pid_catcher, SIGRTMAX); // wysłanie sygnału czasu rzeczywistego
             break;
     }
     while(1){}

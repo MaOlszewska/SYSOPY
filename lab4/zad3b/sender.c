@@ -41,9 +41,9 @@ int main(int argc, char* argv[]){
     wait = false;
 
     struct sigaction action1;
-    sigemptyset(&action1.sa_mask);
-    action1.sa_flags = SA_SIGINFO;
-    action1.sa_sigaction = show_number;
+    sigemptyset(&action1.sa_mask); // inicjalizuje zestaw sygnałów przekazywany przez set, mają być dodane do maski
+    action1.sa_flags = SA_SIGINFO;  // możliwość wyswietlneia informacji o sygnale
+    action1.sa_sigaction = show_number;  // co program ma zrobić po otrzymaniu tego sygnału
 
     if(mode == SIGRT){
         sigaction(SIGRTMIN, &action1, NULL);
@@ -67,12 +67,11 @@ int main(int argc, char* argv[]){
 
     for(int i = 1; i <= number_signals; i++) {
 
-        while (wait) {}
-
+        while (wait) {} // czekam na zmiane stanu w procesie
         wait = true;
 
         switch (mode) {
-            case KILL:
+            case KILL:  // wyysłam sygnał do cathcera
                 kill(pid_catcher, SIGUSR1);
                 break;
             case SIGQUEUE: {

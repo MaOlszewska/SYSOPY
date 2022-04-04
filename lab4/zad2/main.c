@@ -39,15 +39,15 @@ void RESETHAND_handler(int signal){
 }
 
 
-void testSIGINT(){
+void testSIGINT(){   // sygnał gdy użytkownik naciśie klawisz przerwania
     struct sigaction action_SIG;
     sigemptyset(&action_SIG.sa_mask); // inicjalizuje zestaw sygnałów przekazywany przez set, mają być dodane do maski
     action_SIG.sa_sigaction = SIGINT_handler;
     sigaction(SIGINT, &action_SIG, NULL);  // zmiana akcji po otrzymaniu sygnału
-    raise(SIGINT);  // SIGINT- sygnał przerwania
+    raise(SIGINT);  // SIGINT- sygnał przerwania  sygnał zosatje wysłany z procesu do samego siebie
 }
 
-void testSIGTSTP(){
+void testSIGTSTP(){  // sygnał po wprowadzeniu znaku zatrzymania ctrl + z
     struct sigaction action_SIG;
     sigemptyset(&action_SIG.sa_mask); // inicjalizuje zestaw sygnałów przekazywany przez set, mają być dodane do maski
     action_SIG.sa_sigaction = SIGTSTP_handler;
@@ -55,7 +55,7 @@ void testSIGTSTP(){
     raise(SIGTSTP);  // SIGTSTP- sygnał  po naciscnieu ctrl+z
 }
 
-void testSIGCHLD(){
+void testSIGCHLD(){   // sygnał gdy zakonczy się proces potomny wysyłany do procesu macierzystego
     struct sigaction action_SIG;
     sigemptyset(&action_SIG.sa_mask); // inicjalizuje zestaw sygnałów przekazywany przez set, mają być dodane do maski
     action_SIG.sa_sigaction = SIGCHLD_handler;
@@ -67,7 +67,7 @@ void testSIGCHLD(){
 }
 
 
-void testNOCLDSTOP(){
+void testNOCLDSTOP(){  // czy proces macierzesty
     printf("---SYGNAŁ SIGCHLD FLAGA SA_NOCLDSTOP---\n");
     printf("Wiadomość nie powinna zosatć wysłana\n");
     struct sigaction action_SIG;
@@ -84,8 +84,8 @@ void testNOCLDSTOP(){
 void testONESHOT(){
     struct sigaction action_SIG;
     sigemptyset(&action_SIG.sa_mask); // inicjalizuje zestaw sygnałów przekazywany przez set, mają być dodane do maski
-    action_SIG.sa_handler = RESETHAND_handler;
-    action_SIG.sa_flags = SA_RESETHAND;
+    action_SIG.sa_handler = RESETHAND_handler;  // co funckja ma zrobić po otryzmaniu sygnału
+    action_SIG.sa_flags = SA_RESETHAND;         // przywaraca działanie sygnału do wartości domyślnej
     sigaction(SIGCHLD, &action_SIG, NULL);  // zmiana akcji po otrzymaniu sygnału
     if(fork() == 0){
         exit(0);
@@ -106,7 +106,7 @@ int main(int argc, char* argv[]) {
         printf("Przykro mi, nie mam argumnetu :( ");
         return -1;
     }
-    if(strcmp(argv[1], "SIGINFO") == 0) { //informacje o generowaniu sygnału
+    if(strcmp(argv[1], "SIGINFO") == 0) { // wyświetla informacje o generowaniu sygnału
        testSIGINT();
        testSIGCHLD();
        testSIGTSTP();
@@ -114,7 +114,7 @@ int main(int argc, char* argv[]) {
     else if(strcmp(argv[1], "NOCLDSTOP") == 0){
         testNOCLDSTOP(); // czy rodzic otrzyma informacje o zatrzymaniu
     }
-    else if(strcmp(argv[1], "RESETHAND") == 0){
+    else if(strcmp(argv[1], "RESETHAND") == 0){  // przywraca działanie sygnału do wartości domyślenej
         testONESHOT();
     }
     else{

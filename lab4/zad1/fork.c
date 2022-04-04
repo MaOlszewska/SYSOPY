@@ -14,12 +14,11 @@ void handler(int signal){
 
 void ifBlocked(){
     sigset_t blocked;
-    sigpending(&blocked);  // sprawdza oczekujace sygnały
+    sigpending(&blocked);  // Służy do odczytania listy sygnałów, które oczekuję na odblokowanie w danym procesie
     if(sigismember(&blocked, SIGUSR1) == 1){ // czy sygnał SIGUSR1 należy do blocked jeśli tak to zwraca 1
         printf("TAK \n");}
     else{printf("NIE \n");}
 }
-
 
 int main(int argc, char* argv[]) {
 
@@ -38,9 +37,9 @@ int main(int argc, char* argv[]) {
     switch (mode) {
         case IGNORE:{
             printf("ARGUMNET IGNORE \n");
-            signal(SIGUSR1, SIG_IGN);  // SIG_IGN- sygnał jest ignorowany
+            signal(SIGUSR1, SIG_IGN);  // SIG_IGN- sygnał jest ignorowany  signal- funckja obsługi sygnału
             printf("Przed wygenerowaniem rodzica \n");
-            raise(SIGUSR1);  // generuje sygnał sig- numer sygnału do wysłania
+            raise(SIGUSR1);  // generuje sygnał w bieżacym procesie sig- numer sygnału do wysłania
             printf("Po wygenerowaniu rodzica \n");
 
             pid_t pid = fork(); // tworzy się nowy proces
@@ -54,7 +53,7 @@ int main(int argc, char* argv[]) {
         }
         case HANDLER:{
             printf("ARGUMENT HANDLER \n");
-            signal(SIGUSR1, handler);
+            signal(SIGUSR1, handler);  // w handler- przekazujemy co proces ma zrobić kiedy otrzyma sygnał sigusr1
             printf("Przed wygenerowaniem rodzica \n");
             raise(SIGUSR1);  // generuje sygnał sig- numer sygnału do wysłania
             printf("Po wygenerowaniu rodzica \n");
@@ -72,7 +71,7 @@ int main(int argc, char* argv[]) {
             printf("ARGUMENT MASK\n");
             sigset_t set_mask; // typ służący do reprezentowania zestawu sygnałów
             sigemptyset(&set_mask);  // inicjuje zestaw sygnałów wskazywany przez set_mask
-            sigaddset(&set_mask, SIGUSR1);  // maskuje sygnał
+            sigaddset(&set_mask, SIGUSR1);  // dodaje syganł do zestawu sygnału które mają być blokowane
 
             if(sigprocmask(SIG_SETMASK, &set_mask, NULL) != 0){    // ustawia maske na sygnał wskazywany przez set_mask
                 printf("Błąd \n");
@@ -80,7 +79,7 @@ int main(int argc, char* argv[]) {
             }
             printf("Ustawienie maski powiodło się \n");
 
-            raise(SIGUSR1);
+            raise(SIGUSR1);  // proces sam sobie wysyła sygnał SIGUSR1
             printf("Czy sygnał rodzica jest widoczny dla niego? \n");
             ifBlocked();
 
@@ -100,15 +99,15 @@ int main(int argc, char* argv[]) {
             printf("ARGUMENT PENDING\n");
             sigset_t set_mask; // typ służący do reprezentowania zestawu sygnałów
             sigemptyset(&set_mask);  // inicjuje zestaw sygnałów wskazywany przez set_mask
-            sigaddset(&set_mask, SIGUSR1);  // maskuje sygnał
+            sigaddset(&set_mask, SIGUSR1);  // dodaje sygnał do setu sygnałów które mają być blokowane
 
-            if(sigprocmask(SIG_SETMASK, &set_mask, NULL) != 0){    // ustawia maske na sygnał wskazywany przez set_mask
+            if(sigprocmask(SIG_SETMASK, &set_mask, NULL) != 0){    // ustawia maske na sygnały wskazywany przez set_mask
                 printf("Błąd \n");
                 return 1;
             }
             printf("Ustawienie maski powiodło się \n");
 
-            raise(SIGUSR1);
+            raise(SIGUSR1);  // wysyła sygnał sam do siebie
             printf("Czy sygnał rodzica jest widoczny dla niego? \n");
             ifBlocked();
 
