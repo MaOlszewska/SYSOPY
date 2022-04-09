@@ -64,7 +64,7 @@ void execute_commands(FILE* file){
         }
         else{
             printf("Wykonuje linie: %s\n", command);
-            count_commands = 0;  
+            count_commands = 0;
             lines_num =  get_number_commands(command, commands);
             for(int i = 0; i < 10; i++){
                 if(lines_num[i] != NULL){
