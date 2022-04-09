@@ -3,6 +3,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <wait.h>
 
 
 int main(int argc, char* argv[]) {
@@ -14,19 +15,20 @@ int main(int argc, char* argv[]) {
     mkfifo(argv[1], 0666);
 
     pid_t pid = fork();
-    if(pid > 0){
-        // argv[1] - fifo , argv[2] - scieżka outputu, 10 - liczba znaków odczytywanych jednorazowo
-        execl("./consumer", "./consumer","pipe", argv[2], "5", NULL);
+    if(pid == 0){
+
+        execl("./consumer", "./consumer","pipe", argv[2], "10", NULL);
     }
 
     for(int i = 0; i <= 4; i++) {
         char row[2];
-        sprintf(row, "%d", i);
+        sprintf(row, "%d", i+1);
         pid = fork();
-        if (pid > 0) {
-            // argv[1] - fifo , argv[i + 3] - scieżka outputu, 10 - liczba znaków odczytywanych jednorazowo
-            execl("./producent", "./producent", "pipe", row, argv[i + 3], "5", NULL);
+        if (pid == 0) {
+            execl("./producent", "./producent", "pipe", row, argv[i + 3], "10", NULL);
         }
     }
+    wait(NULL);
+
     return 0;
 }

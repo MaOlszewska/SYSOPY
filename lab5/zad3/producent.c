@@ -1,9 +1,12 @@
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <sys/stat.h>
 #include <unistd.h>
- // TODO jest gitówa chyba raczej
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <time.h>
+#include <string.h>
 
 int main(int argc, char* argv[]) {
     char* pipe_name = argv[1];  // scieżka do potoku nazwanego
@@ -11,17 +14,16 @@ int main(int argc, char* argv[]) {
     int row = atoi(argv[2]); // numer wiersza
     int number = atoi(argv[4]); // ilosć znaków odczytywanych
 
-    FILE *pipe = fopen(pipe_name, "w");
+    FILE* pipe = fopen(pipe_name, "w");
     FILE *input = fopen(file_name, "r");
 
     char tmp[number + 10];
     char line[number + 10];
     while(fgets(tmp, number + 10, input)){
-        printf("%s\n", tmp);
-        sprintf(line,"%d->%s",row, tmp);
+        sprintf(line,"%d-%s",row, tmp);
         strcat(line, "\n");
-        write(pipe, line, strlen(line)*sizeof(char));
-        int r = rand() % 3;
+        fwrite(line, 15,15,pipe);
+        int r = rand() % 2;
         sleep(r);
     }
     fclose(pipe);
