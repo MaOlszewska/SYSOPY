@@ -89,13 +89,10 @@ void execute_commands(FILE* file){
                 }
                 else
                 {
-                    //pipe won't be used anymore
                     if( i > 0){
                         close(prevFd[0]);
                         close(prevFd[1]);
                     }
-
-                    //remeber descriptors of current pipe so the next child can use it
                     if(i !=  count_commands -1){
                         prevFd[0] = curFd[0];
                         prevFd[1] = curFd[1];
