@@ -1,5 +1,5 @@
 command0 = cat /etc/passwd | echo Hello
-command1 = grep ^s | cut -b 1-10
+command1 = grep ^r | cut -b 1-5
 command2 = wc -c
 command3 = ps aux | wc -l
 command3

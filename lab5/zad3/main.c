@@ -12,8 +12,8 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
 
-    mkfifo(argv[1], 0666);
-
+    mkfifo(argv[1], 0666); // konsumer i producent bedą się komunikować przez kolejke FIFO- potok nazwany
+    // 06666 - odczyt i zapis dozwolone dla wszystkich
     pid_t pid = fork();
     if(pid == 0){
 
@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
     }
 
     for(int i = 0; i <= 4; i++) {
-        char row[2];
+        char row[2];  //
         sprintf(row, "%d", i+1);
         pid = fork();
         if (pid == 0) {

@@ -13,4 +13,4 @@ test:
 
 
 clean:
-	rm -f main consumer producent pipe 
+	rm -f main consumer producent pipe

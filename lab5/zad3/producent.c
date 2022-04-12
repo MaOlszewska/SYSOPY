@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
     int row = atoi(argv[2]); // numer wiersza
     int number = atoi(argv[4]); // ilosć znaków odczytywanych
 
-    FILE* pipe = fopen(pipe_name, "w");
+    FILE* pipe = fopen(pipe_name, "w"); // otwiera potok nazwany aby można było w nim zapisywać
     FILE *input = fopen(file_name, "r");
 
     char tmp[number + 10];
@@ -22,10 +22,10 @@ int main(int argc, char* argv[]) {
     while(fgets(tmp, number + 10, input)){
         sprintf(line,"%d-%s",row, tmp);
         strcat(line, "\n");
-        fwrite(line, 15,15,pipe);
+        fwrite(line, 15,15,pipe); // zapisuje do potoku numer wiersza i odczytany fragment pliku
         int r = rand() % 2;
-        sleep(r);
+        sleep(r); // odczekuje losową ilosć czasu 1 lub 2 sekundy
     }
-    fclose(pipe);
+    fclose(pipe); // po odczytaniu całego pliku zamyka potok i plik z którego czytał
     fclose(input);
 }

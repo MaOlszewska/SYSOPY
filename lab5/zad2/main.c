@@ -3,9 +3,11 @@
 #include <string.h>
 
 void ordered_by_date(){
-    FILE * file;
-    file = popen("echo | mail | sort -M ", "r");  // -k 3 sortowanie po miesiącu
-    pclose(file);
+    FILE * file;  // zapisuje do pliku
+    // popen tworzy potok, nowy proces i ustawia jego wyjscie/lub wejscie na odpowiednią koncówke potoku
+    file = popen("echo | mail | sort -M ", "r");  // -M sortowanie po miesiącu
+    // "r" bo chcemy odczytać wyjscie procesu, zwraca obiekt FILE*
+    pclose(file); // pclose oczekuje kiedy proces zakonczy działanie
     if(file == NULL){
         printf("Błąd przy utworzeniu potoku!\n");
         exit(1);
@@ -14,13 +16,13 @@ void ordered_by_date(){
 
     char line[256];
     while(fgets(line, 256, file) != NULL){
-        printf("%s \n", line);
+        printf("%s \n", line);  // wypisuje maile posortowane
     }
 
 }
 
 void ordered_by_sender(){
-    FILE * file;
+    FILE * file; // popen tworzy nowe potok, proces i ustawia jego wejscie lub wyjscie na dobrą koncówke potoku
     file = popen("echo | mail | sort -k 3 ", "r");  // -k 3 sortowanie po trzeciej kolumnie czyli po nadawcy
     pclose(file);
     if(file == NULL){
@@ -38,7 +40,7 @@ void ordered_by_sender(){
 void send(char* address, char* title, char* content){
     FILE * file;
     char * command = (char*) calloc (256, sizeof(char));
-    strcat(command, "echo ");
+    strcat(command, "echo "); // sklejam komende wysyłającą maila
     strcat(command, content);
     strcat(command, " | mail -s ");
     strcat(command, title);
@@ -46,12 +48,12 @@ void send(char* address, char* title, char* content){
     strcat(command, address);
 
     printf("Mail został wysłany: \n%s\n", command);
-    file = popen(command, "w");
-    if(file == NULL){
+    file = popen(command, "w"); // tworzy się nowy potok, proces i i ustawia jego standardowe wyjscie na dobrą koncówke potoku
+    if(file == NULL){  // "w" ozancza, że chcemy pisać na wejsciu procesu
         printf("Błąd przy utworzeniu potoku! email nie został wysłany \n");
         exit(1);
     }
-    pclose(file);
+    pclose(file);  // oczekuje na zakonczenie działania procesu
     free(command);
 
 }
