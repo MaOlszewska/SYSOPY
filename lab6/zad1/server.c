@@ -9,10 +9,11 @@
 #include "common.h"
 
 int queue;
-int IdClients[10] = {0,0,0,0,0,0,0,0,0,0}; //zapisuje id klientów
+int IdClients[] = {0,0,0,0,0,0,0,0,0,0}; //zapisuje id klientów
 key_t keysClients[10];
 pid_t pidsClients[10];
 int CurrentID = 1;
+char types[5][5] = {"STOP", "LIST","ALL","ONE","INIT"};
 
 
 void init_client(key_t key, pid_t pid){
@@ -30,13 +31,14 @@ void init_client(key_t key, pid_t pid){
         printf("Nie można dodać kolejnego klienta :( ");
         return ;
     }
-
-//    int queueClient;
-//    queueClient = msgget(key, IPC_CREAT); // tworzę nową kolejkę dla klienta
-//    if(queueClient == - 1){
-//        perror("Nie udało się stworzyć kolejki :(");
-//        exit(1);
-//    }
+    char * path = getenv("HOME");
+    key_t key_c = ftok(path, pid);
+    if(key_c == -1){  // tworzę sobie unikalny klucz na podstawie ścieżki HOME dla kolejki
+        perror("Nie udało się stworzyć unikalnego klucza :( ");
+        exit(1);
+    }
+    // kolejka serwera
+    int queue_c = msgget(key_c, IPC_CREAT | 0666);
 
     // server odsyła identyfikator do klienta
 
@@ -48,11 +50,11 @@ void init_client(key_t key, pid_t pid){
     pidsClients[i] = pid;
     printf("%d ", key);
     printf("DODAŁEM KLIENTA o ID %d\n", CurrentID);
-    CurrentID ++;
-    if(msgsnd(key, &message, size, 0) != 0){
+    if(msgsnd(queue_c, &message, size, 0) != 0){
         printf("Nie udało się odesłać wiadomości :(");
         return ;
     }
+    CurrentID ++;
 }
 
 void stop(int id){
@@ -65,6 +67,7 @@ void stop(int id){
         }
         i++;
     }
+    printf("Nie ma już klienta o id  %d \n", IdClients[i]);
     IdClients[i] = 0;
     keysClients[i] = 0;
     pidsClients[i] = 0;
@@ -111,9 +114,15 @@ void send_one(messagebuf * message){
         printf("Nie udało się odesłać wiadomości :(");
         return ;
     }
+    printf("Wysłałem jedną wiadomosć");
 }
 
 void receive_message(messagebuf *message){
+    FILE *ptr = fopen("test.txt","a");
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    fprintf(ptr,"DATA: %d-%02d-%02d %02d:%02d:%02d %d %s\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec, message->idClient, types[message->messagetype -1]);
+    fclose(ptr);
     switch (message->messagetype){
         case INIT:  // dodaje nowego klienta
             init_client(message->clientKey, message-> clientPid);
@@ -137,14 +146,14 @@ void receive_message(messagebuf *message){
 
 int main(int argc, char* argv[]) {
     char * path = getenv("HOME");
-    key_t key = ftok(path, 'A');
+    key_t key = ftok(path, 'B');
     if(key == -1){  // tworzę sobie unikalny klucz na podstawie ścieżki HOME dla kolejki
         perror("Nie udało się stworzyć unikalnego klucza :( ");
         exit(1);
     }
 
-    queue = msgget(key, IPC_CREAT | 0666 ); //IPC_CREATE - tworzy kolejke w przypadku jej braku o takim kluczu
-    printf("SERVER ID: %d", queue);
+    queue = msgget(key,   IPC_CREAT ); //IPC_CREATE - tworzy kolejke w przypadku jej braku o takim kluczu
+    printf("SERVER ID: %d \n", queue);
     if(queue == - 1){
         perror("Nie udało się stworzyć kolejki :(");
         exit(1);
@@ -153,7 +162,7 @@ int main(int argc, char* argv[]) {
 
     while(true){  //serwer sobie czeka na komunikaty
         // identyfikator kolejki, bufor do zapisu, rozmiar bufora,
-        if(msgrcv(queue, &message, sizeof(message) - sizeof(message.messagetype), -INIT,0) == -1){
+        if(msgrcv(queue, &message, sizeof(message) - sizeof(message.messagetype), -(INIT+1),0) == -1){
             perror("Nie udało się odebrać wiadomości :( ");
             exit(1);
         }

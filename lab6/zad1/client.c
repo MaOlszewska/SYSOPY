@@ -16,6 +16,7 @@ int current_ID;
 void init(){
     messagebuf message;
     message.messagetype = INIT;
+    message.clientPid = getpid();
     message.clientKey = queue_c;
 
     if(msgsnd(queue_s, &message, size, 0) != 0){
@@ -23,12 +24,11 @@ void init(){
         exit(1);
     }
     messagebuf recive_message;
-    if(msgrcv(queue_s, &message, size, INIT,0) == -1){
+    if(msgrcv(queue_c, &message, size, INIT,0) == -1){
         perror("Nie udało się odebrać wiadomości :( ");
         exit(1);
     }
     current_ID = recive_message.idClient;
-    printf("MOJE ID to: %d", current_ID);
 }
 
 void stop(){
@@ -39,35 +39,46 @@ void stop(){
         printf("Nie udało się odesłać wiadomości :(");
         exit(1);
     }
+    else{
+        printf("Znikam\n");
+        if (msgctl(queue_c, IPC_RMID, NULL) == -1)
+        {
+            perror("Błąd przy usuwaniu kolejki\n");
+            exit(1);
+        }
+        exit(0);
+    }
 }
 void list(){
     messagebuf message;
+    message.idClient = current_ID;
     message.messagetype = LIST;
     if(msgsnd(queue_s, &message, size, 0) != 0){
         printf("Nie udało się odesłać wiadomości :(");
         exit(1);
     }
+    printf("CHCE ŻEBYŚ MI POKAZAŁ KLIENTÓW \n");
 }
 
 
 int main(int argc, char* argv[]) {
 
     char * path = getenv("HOME");
-    key_t key = ftok(path, 'A');
+    key_t key = ftok(path, 'B');
     if(key == -1){  // tworzę sobie unikalny klucz na podstawie ścieżki HOME dla kolejki
         perror("Nie udało się stworzyć unikalnego klucza :( ");
         exit(1);
     }
     // kolejka serwera
     queue_s = msgget(key, IPC_CREAT); //IPC_CREATE - tworzy kolejke w przypadku jej braku o takim kluczu
+
     key_t key_c = ftok(path, getpid());
     if(key_c == -1){  // tworzę sobie unikalny klucz na podstawie ścieżki HOME dla kolejki
         perror("Nie udało się stworzyć unikalnego klucza :( ");
         exit(1);
     }
-    // kolejka serwera
-    queue_c = msgget(key_c, IPC_CREAT); //IPC_CREATE - tworzy kolejke w przypadku jej braku o takim kluczu
-    printf("CLIENT ID: %d", key_c);
+    queue_c = msgget(key_c, IPC_CREAT | 0666); //IPC_CREATE - tworzy kolejke w przypadku jej braku o takim kluczu
+    printf("CLIENT ID: %d\n", queue_c);
     init();
     char line[256];
     char buff[256];
@@ -83,6 +94,8 @@ int main(int argc, char* argv[]) {
             list();
         }
         else if(strcmp(line, "ALL") == 0){
+            time_t t;
+            time(&t);
             messagebuf message;
             message.messagetype = ALL;
             message.idClient = current_ID;
@@ -94,7 +107,7 @@ int main(int argc, char* argv[]) {
                 printf("Nie udało się odesłać wiadomości :(");
                 exit(1);
             }
-            printf("WYSŁAŁEM WIADOMOŚĆ DO WSZYSTKICH");
+            printf("WYSŁAŁEM WIADOMOŚĆ DO WSZYSTKICH \n");
         }
         else if(strcmp(line, "ONE") == 0){
             printf("PODAJ TREŚĆ WIADOMOŚCI: \n");
@@ -113,7 +126,7 @@ int main(int argc, char* argv[]) {
             }
         }
         else{
-            printf("Nie dostałem nic");
+            printf("Otrzymałem wiadomość \n");
         }
     }
 
