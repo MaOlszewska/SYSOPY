@@ -1,51 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/msg.h>
-#include <sys/ipc.h>
 #include <sys/types.h>
 #include <stdbool.h>
 #include <time.h>
 #include <unistd.h>
 #include <string.h>
+#include <mqueue.h>
 #include "common.h"
 
-int queue_s;
-int queue_c;
+mqd_t queue_s;
+mqd_t queue_c;
 int current_ID;
+pid_t pid;
 
 void init(){
     messagebuf message;
     message.messagetype = INIT;
-    message.clientPid = getpid();
-    message.clientKey = queue_c;
+    message.clientPid = pid;
 
-    if(msgsnd(queue_s, &message, size, 0) != 0){
+    if(mq_send(queue_s, (const char *) &message, size, 0) != 0){
         printf("Nie udało się odesłać wiadomości :(");
-        exit(1);
+        return ;
     }
-    messagebuf recive_message;
-    if(msgrcv(queue_c, &message, size, INIT,0) == -1){
+    messagebuf receive_message;
+    if(mq_receive(queue_s, (char *) &receive_message, 256, NULL) == -1){
         perror("Nie udało się odebrać wiadomości :( ");
         exit(1);
     }
-    current_ID = recive_message.idClient;
+    current_ID = receive_message.idClient;
 }
 
 void stop(){
     messagebuf message;
     message.messagetype = STOP;
     message.idClient = current_ID;
-    if(msgsnd(queue_s, &message, size, 0) == -1){
+    if(mq_send(queue_s, (const char *) &message, size, 0) != 0){
         printf("Nie udało się odesłać wiadomości :(");
-        exit(1);
+        return ;
     }
     else{
+        char* name = calloc(256,sizeof(char));
+        sprintf(name, "/%d", pid);
         printf("Znikam\n");
-        if (msgctl(queue_c, IPC_RMID, NULL) == -1)
-        {
-            perror("Błąd przy usuwaniu kolejki\n");
-            exit(1);
-        }
+        mq_close(queue_s);
+        mq_close(queue_s);
+        mq_unlink(name);
         exit(0);
     }
 }
@@ -53,9 +53,9 @@ void list(){
     messagebuf message;
     message.idClient = current_ID;
     message.messagetype = LIST;
-    if(msgsnd(queue_s, &message, size, 0) != 0){
+    if(mq_send(queue_s, (const char *) &message, size, 0) != 0){
         printf("Nie udało się odesłać wiadomości :(");
-        exit(1);
+        return ;
     }
     printf("CHCE ŻEBYŚ MI POKAZAŁ KLIENTÓW \n");
 }
@@ -63,22 +63,15 @@ void list(){
 
 int main(int argc, char* argv[]) {
 
-    char * path = getenv("HOME");
-    key_t key = ftok(path, 'B');
-    if(key == -1){  // tworzę sobie unikalny klucz na podstawie ścieżki HOME dla kolejki
-        perror("Nie udało się stworzyć unikalnego klucza :( ");
-        exit(1);
-    }
-    // kolejka serwera
-    queue_s = msgget(key, IPC_CREAT); //IPC_CREATE - tworzy kolejke w przypadku jej braku o takim kluczu
+    queue_s = mq_open("/server_q", O_WRONLY);
 
-    key_t key_c = ftok(path, getpid());
-    if(key_c == -1){  // tworzę sobie unikalny klucz na podstawie ścieżki HOME dla kolejki
-        perror("Nie udało się stworzyć unikalnego klucza :( ");
-        exit(1);
-    }
-    queue_c = msgget(key_c, IPC_CREAT | 0666); //IPC_CREATE - tworzy kolejke w przypadku jej braku o takim kluczu
-    printf("CLIENT ID: %d\n", queue_c);
+    struct mq_attr atrr;
+    atrr.mq_maxmsg = 10;
+    atrr.mq_msgsize = 256;
+    pid = getpid();
+    char* name = calloc(256,sizeof(char));
+    sprintf(name, "/%d", pid);
+    queue_c = mq_open(name, O_CREAT | O_RDWR | O_EXCL , 0666, &atrr);
     init();
     char line[256];
     char buff[256];
@@ -103,7 +96,7 @@ int main(int argc, char* argv[]) {
             printf("PODAJ TREŚĆ WIADOMOŚCI: \n");
             scanf("%c ", buff);
             strcpy(message.messagetext, buff);
-            if(msgsnd(queue_s, &message, size, 0) != 0){
+            if(mq_send(queue_s, (const char *) &message, size, 0) != 0){
                 printf("Nie udało się odesłać wiadomości :(");
                 exit(1);
             }
@@ -123,7 +116,7 @@ int main(int argc, char* argv[]) {
             message.to_send = tmpid;
             message.date = t;
             strcpy(message.messagetext, buff);
-            if(msgsnd(queue_s, &message, size, 0) != 0){
+            if(mq_send(queue_s, (const char *) &message, size, 0) != 0){
                 printf("Nie udało się odesłać wiadomości :(");
                 exit(1);
             }
