@@ -1,4 +1,4 @@
-# Install script for directory: /home/martynka/CLionProjects/Sysopy
+# Install script for directory: /home/martyna/Pulpit/SYSOPY
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/martynka/CLionProjects/Sysopy/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/martyna/Pulpit/SYSOPY/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

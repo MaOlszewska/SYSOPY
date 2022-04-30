@@ -1,4 +1,4 @@
-/snap/clion/184/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/184/bin/ninja/linux/ninja -G Ninja /home/martynka/CLionProjects/Sysopy
+/snap/clion/189/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/martyna/Pulpit/SYSOPY -B /home/martyna/Pulpit/SYSOPY/cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/martynka/CLionProjects/Sysopy/cmake-build-debug
+-- Build files have been written to: /home/martyna/Pulpit/SYSOPY/cmake-build-debug

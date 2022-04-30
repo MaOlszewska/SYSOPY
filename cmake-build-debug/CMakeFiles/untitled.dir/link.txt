@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/untitled.dir/lab6/zad2/client.c.o CMakeFiles/untitled.dir/lab6/zad2/server.c.o -o untitled 
