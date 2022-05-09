@@ -1,17 +1,12 @@
 #include <stdlib.h>
-#include <pwd.h>
-#include <sys/time.h>
-#include <time.h>
 #include <sys/sem.h>
 #include <sys/shm.h>
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <string.h>
-#include <errno.h>
 #include <sys/wait.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <stdbool.h>
 
 #include "common.h"
 
@@ -19,8 +14,6 @@ int semafor_oven, semafor_table;
 int shm_oven, shm_table;
 pid_t deliveres_pid[10];
 pid_t pizzaiols_pid[10];
-
-
 
 void create_shm(int p, int tab){
     key_t oven_shm_key = ftok(getenv("home"), ID_O_SHM);
@@ -87,7 +80,7 @@ int main (int argc, char* argv[]){
         pizzaiolos = atoi(argv[1]);
     }
     else{
-        printf("Za mało argumentów :( \n");
+        printf("Not enough arg :( \n");
         exit(-1);
     }
     // Inicjalizuje pamięć dzieloną

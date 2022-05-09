@@ -6,6 +6,6 @@ compile:
 	gcc -g -Wall deliver.c -o deliver
 
 run:
-	./main 3 2
+	./main 4 4
 clean:
-	rm server client
+	rm pizza main deliver
