@@ -31,7 +31,6 @@ long long current_timestamp() {
 void bake_pizza(){
     int baked = 0;
     //reserve access to table
-    printf("DUPA");
     struct sembuf sops;
     sops.sem_num = 0;
     sops.sem_op = -1;
@@ -125,6 +124,7 @@ int main (int argc, char* argv[]) {
         printf("pid: %d timestamp: %lld PRZYGOTOWUJE PIZZE: %d \n", getpid(), getTime(), type);
         sleep(2);
         bake_pizza();
+        finish_baking();
         sleep(TIME_B);
     }
     return  0;
