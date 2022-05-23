@@ -5,147 +5,153 @@
 #include <unistd.h>
 #include <pthread.h>
 
-int W;
-int H;
+int width;
+int height;
 int M;
-int ** input_image;
-int ** output_image;
-int nThreads;
+int ** inputImage;
+int ** outputImage;
+int numThreads;
+pthread_t * threads;
 
-void number_handler(void * args){
-    clock_t  real_time[2];
-    real_time[0] = clock();
+void *number_handler(void * args){
+    clock_t  time[2];
+    time[0] = clock();
     int numberThread = * (int *) args;
-    for(int i = 0; i < H; i++){
-        for(int j = 0; j < W; j++){
-            if(input_image[i][j] >= (256/nThreads)*numberThread && input_image[i][j] < (256/nThreads)*(numberThread + 1)){
-                output_image[i][j] = 255 - input_image[i][j];
+    for(int i = 0; i < height; i++){
+        for(int j = 0; j < width; j++){
+            if(inputImage[i][j] >= (256 / numThreads) * numberThread && inputImage[i][j] < (256 / numThreads) * (numberThread + 1)){
+                outputImage[i][j] = 255 - inputImage[i][j];
             }
         }
     }
-    real_time[1] = clock();
-    double* execute_time = (double*) calloc(1, sizeof(double));
-    *execute_time = (double)(real_time[1]-real_time[0])/CLOCKS_PER_SEC;
-    pthread_exit(execute_time);
+    time[1] = clock();
+    double* executeTime = (double*) calloc(1, sizeof(double));
+    *executeTime = (double)(time[1] - time[0]) / CLOCKS_PER_SEC;
+    pthread_exit(executeTime);
 }
 
-void block_handler(void * args){
-    clock_t  real_time[2];
-    real_time[0] = clock();
+void *block_handler(void * args){
+    clock_t  time[2];
+    time[0] = clock();
     int numberThread = * (int *) args;
-    for(int i = numberThread * W / nThreads; i < (numberThread + 1) * W / nThreads; i++){
-        for(int j = 0; j < H; j++){
-            if(input_image[i][j] >= (256/nThreads)*numberThread && input_image[i][j] < (256/nThreads)*(numberThread + 1)){
-                output_image[i][j] = 255 - input_image[j][i];
+    for(int i = numberThread * width / numThreads; i < (numberThread + 1) * width / numThreads; i++){
+        for(int j = 0; j < height; j++){
+            if(inputImage[i][j] >= (256 / numThreads) * numberThread && inputImage[i][j] < (256 / numThreads) * (numberThread + 1)){
+                outputImage[i][j] = 255 - inputImage[j][i];
             }
         }
     }
-    real_time[1] = clock();
-    double* execute_time = (double*) calloc(1, sizeof(double));
-    *execute_time = (double)(real_time[1]-real_time[0])/CLOCKS_PER_SEC;
-    pthread_exit(execute_time);
+    time[1] = clock();
+    double* executeTime = (double*) calloc(1, sizeof(double));
+    *executeTime = (double)(time[1] - time[0]) / CLOCKS_PER_SEC;
+    pthread_exit(executeTime);
 }
 
 int main (int argc, char* argv[]){
 
     int type;
-    char *input_filename;
-    char *output_filename;
+    char *inputFilename;
+    char *outputFilename;
     char* id = (char*) calloc(50, sizeof(char));
 
     if (argc < 5){
-        printf("Za mało argumentów :( \n");
+        printf("Za mało argumentów, smuteczek:( \n");
         exit(0);
     }
 
     //pobieranie argumentów programu
-    nThreads = atoi(argv[1]);
-    if(strcmp((argv[2]), "numbers") == 0){
-        type = 1;
-    }
-    else{
-        type = 0;
-    }
+    numThreads = atoi(argv[1]);
+    threads = (pthread_t*) calloc(numThreads, sizeof (pthread_t));
+    if(strcmp((argv[2]), "numbers") == 0){ type = 1; }
+    else{ type = 0; } //block
 
-    input_filename = argv[3];
-    output_filename = argv[4];
+    inputFilename = argv[3];
+    outputFilename = argv[4];
 
     // otwieram plik tylko do odczytu bo nie potrzeba mi nic więcej
-    FILE *pic = fopen(pic, "r");
+    FILE *pic = fopen(inputFilename, "r");
+    if (pic == NULL){
+        printf("Mały błędzik :( \n");
+        exit(-1);
+    }
+    // zczytuje i zpaisane dane o zdjęciu
+    printf("Zdjęcie wejściowe : %s \n", inputFilename);
     fscanf(pic, "%s", id);
-    fscanf(pic, "%d %d", &W, &H);
+    fscanf(pic, "%d %d", &width, &height);
     fscanf(pic, "%d", &M);
 
     // tworze tablice z inputem i outputem
-    input_image = (int**) calloc(H, sizeof(int*));
-    output_image = (int**) calloc(H, sizeof(int*));
-    for( int i = 0; i < H; i++){
-        input_image[i] = ( int*) calloc(W, sizeof(int));
-        output_image[i] = (int*) calloc(W, sizeof(int));
+    inputImage = (int**) calloc(height, sizeof(int*));
+    outputImage = (int**) calloc(height, sizeof(int*));
+    for(int i = 0; i < height; i++){
+        inputImage[i] = ( int*) calloc(width, sizeof(int));
+        outputImage[i] = (int*) calloc(width, sizeof(int));
     }
 
     // zapisanie obrazka do tablicy
 
-    for (int i = 0; i < H; i++){
-        for( int j = 0; j < W; j ++){
-            fscanf(pic, "%d", input_image[i][j]);
+    for (int i = 0; i < height; i++){
+        for(int j = 0; j < width; j ++){
+            fscanf(pic, "%d", &inputImage[i][j]);
         }
     }
 
-    // zamykam plik
-    fclose(input_filename);
+    fclose(pic);
 
+    //rozpoczynam liczenie czasu na wykonanie całego programu
     clock_t  real_times[2];
     real_times[0] = clock();
 
     // tworze wątki
-    pthread_t* threadsID = (pthread_t*) malloc(sizeof(pthread_t) * nThreads);
-    if( type == 1){
-        for(int i = 0; i < nThreads; i++){
+    if( type == 1){ // dla numbers
+        for(int i = 0; i < numThreads; i++){
             int * numberThread = (int*) malloc(sizeof(int));
             *numberThread = i;
-            pthread_create(&threadsID[i], NULL, number_handler, numberThread);
+            pthread_create(&threads[i], NULL, number_handler, numberThread);
         }
     }
-    else{
-        for(int i = 0; i < nThreads; i++){
+    else{ // dla block
+        for(int i = 0; i < numThreads; i++){
             int * numberThread = (int*) malloc(sizeof(int));
             *numberThread = i;
-            pthread_create(&threadsID[i], NULL, block_handler, numberThread);
+            pthread_create(&threads[i], NULL, block_handler, numberThread);
         }
+    }
 
-    }
     // czekam na zakonczenie pracy wszystkich wątków
     double * thread_time;
-    for(int i = 0; i < nThreads; i++){
-        pthread_join(threadsID[i], (void*)&thread_time);
-        printf("Jestem watkiem numer: %d i soją prace wykonałem w czasie: %f\n", i, *thread_time);
-
+    for(int i = 0; i < numThreads; i++){
+        pthread_join(threads[i], (void*)&thread_time);
+        printf("Jestem watkiem numer: %d i swoją prace wykonałem w czasie: %f\n", i, *thread_time);
     }
     free(thread_time);
+
+    // kończe liczenie czasu
     real_times[1] = clock();
     double all_threads_time = (double)(real_times[1] - real_times[0]) / CLOCKS_PER_SEC;
     printf("Program zakończył wszytskie operacje w czsie %f \n", all_threads_time);
 
     // zapisuje wyniki w outputfile
-    FILE* output_pic = fopen(output_filename, "w");
-    fprintf(output_pic, "%s\n%d %d\n%d\n", id, W, H, 255);
-    for(int i = 0; i < H; i++){
-        for(int j = 0; j < W; j++){
-            fprintf(output_pic, "%d ", output_image[i][j]);
+    FILE* outputPic = fopen(outputFilename, "w");
+    fprintf(outputPic, "%d %d\n%d\n", width, height, 255);
+    for(int i = 0; i < height; i++){
+        for(int j = 0; j < width; j++){
+            fprintf(outputPic, "%d ", outputImage[i][j]);
         }
 
-        fprintf(output_pic, "\n");
+        fprintf(outputPic, "\n");
 
     }
-    fclose(output_pic);
+    fclose(outputPic);
 
     // zwalniam całą wcześniej zaalokowaną pamięć
-    for(int i = 0; i < H; i++){
-        free(input_image[i]);
-        free(output_image[i]);
+    for(int i = 0; i < height; i++){
+        free(inputImage[i]);
+        free(outputImage[i]);
     }
-    free(output_image);
-    free(input_image);
+    free(outputImage);
+    free(inputImage);
+
+    free(threads);
     return 0;
 }
